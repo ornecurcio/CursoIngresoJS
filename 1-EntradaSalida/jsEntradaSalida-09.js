@@ -18,4 +18,6 @@ aumento1 = parseInt(aumento1)
 resultado = sueldo + aumento1; 
 
 document.getElementById("txtIdResultado").value = resultado	;
+
+console.log(resultado); 
 }
