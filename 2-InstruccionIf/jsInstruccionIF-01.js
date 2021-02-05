@@ -6,12 +6,12 @@ function mostrar()
 	//tomo la edad 
 	let edad; 
 
-	edad = document.getElementById("txtIdEdad");
-	edad = parseInt(edad);  
+	edad = document.getElementById("txtIdEdad").value;
+	edad = parseInt(edad);
 	 
-	if(edad = 15); 
+	if(edad==15) // no se debe cerrar el if no punto y coma sino se bloquea. 
     { 
-	   console.log ("niña bonita");  
+	   alert ("niña bonita");  
     }
    
      
