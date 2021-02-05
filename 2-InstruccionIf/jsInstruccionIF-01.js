@@ -6,7 +6,8 @@ function mostrar()
 	//tomo la edad 
 	let edad; 
 
-	edad = document.getElementById("txtIdEdad"); 
+	edad = document.getElementById("txtIdEdad");
+	edad = parseInt(edad);  
 	 
 	if(edad = 15); 
     { 
