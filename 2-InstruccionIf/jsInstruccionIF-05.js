@@ -24,9 +24,9 @@ function mostrar()
 	{
 		alert("No es adolescente"); 
 	}*/
-	
+
 	if(edad>17||edad<13)// || esto significa ó, ó una cosa ó la otra
-	{	{
+	{	
 		alert("No es adolescentes")
 	}
 
