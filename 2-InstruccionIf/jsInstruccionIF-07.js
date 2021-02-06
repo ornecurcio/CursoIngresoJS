@@ -5,7 +5,7 @@ mostrar el siguiente mensaje:
 */
 function mostrar()
 {
-	//>18 y != soltero
+	//<18 y != soltero
 	let estado;  
 	let edad; 
 	
