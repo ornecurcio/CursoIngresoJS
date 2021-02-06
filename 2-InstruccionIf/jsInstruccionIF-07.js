@@ -6,20 +6,20 @@ mostrar el siguiente mensaje:
 function mostrar()
 {
 	//>18 y != soltero
-	let Divorciado; 
-	let Casado; 
-	let Soltero; 
+	let estado;  
 	let edad; 
 	
 	
 	edad = document.getElementById("txtIdEdad").value;
 	edad = parseInt(edad); 
 
-	Divorciado = document.getElementsByName("Divorciado").value; 
-	//Casado = document.getElementById("Casado".value); 
-	//Soltero = document.getElementById("Soltero").value; 
+	estado = document.getElementById("estadoCivil").value;
 
-	alert(Divorciado);
+	if(edad<18 && estado!="Soltero")
+	{
+		alert("Usted es muy pequeño para NO ser Soltero")
+	}
+	
 
 
 	/*if(edad)
@@ -29,4 +29,20 @@ function mostrar()
 
 	
 
+
 }//FIN DE LA FUNCIÓN
+
+/*// Obtener la referencia a la lista
+var lista = document.getElementById("opciones");
+
+// Obtener el índice de la opción que se ha seleccionado
+var indiceSeleccionado = lista.selectedIndex;
+
+// Con el índice y el array "options", obtener la opción seleccionada
+var opcionSeleccionada = lista.options[indiceSeleccionado];
+
+// Obtener el valor y el texto de la opción seleccionada
+var textoSeleccionado = opcionSeleccionada.text;
+var valorSeleccionado = opcionSeleccionada.value;
+alert("Opción seleccionada: " + textoSeleccionado + "\n Valor de la opción: " + valorSeleccionado);
+*/
