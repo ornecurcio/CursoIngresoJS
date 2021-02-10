@@ -19,7 +19,16 @@ function mostrar()
 	{
 		alert("Usted es muy pequeño para NO ser Soltero")
 	}
-	
+
+	// esta es otra forma de hacerlo. 
+	if(edad<18)
+	{
+		if(estado!="Soltero")
+		{
+            alert("Usted es muy pequeño para NO ser Soltero")
+		}
+		
+	}
 
 
 	/*if(edad)
