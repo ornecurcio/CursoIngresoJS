@@ -31,15 +31,10 @@ function mostrar()
 	}
 
 
-	/*if(edad)
-	{
-
-	}*/
-
 	
 
-
-}//FIN DE LA FUNCIÓN
+}
+//FIN DE LA FUNCIÓN
 
 /*// Obtener la referencia a la lista
 var lista = document.getElementById("opciones");
