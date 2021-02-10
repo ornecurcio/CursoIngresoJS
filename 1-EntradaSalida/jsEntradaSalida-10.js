@@ -28,7 +28,7 @@ en el cuadro de texto "RESULTADO"*/
 Debemos lograr tomar el importe por ID.
 Transformarlo a entero (parseInt), luego
 pedirle al usuario un % de descuento y mostrar el importe en el cuadro de texto "RESULTADO"*/
-function mostrarAumento()
+/*function mostrarAumento()
 
 {
   let importe; 
@@ -49,7 +49,31 @@ function mostrarAumento()
 
   document.getElementById("txtIdResultado").value = resultado	;
 
-  
+}*/
+
+/*2- Ornela Curcio
+en el ejercicio 10 de entrada y salida , se debe pedir el nombre del producto ,
+el importe y tambien se debe pedir el porcentaje de descuento al usuario, 
+mostar el mensaje "usted compro un XXXXXX con XX % de descuento, el precio final es XXXX" */
+
+function mostrarAumento()
+{
+  let nombreProducto; 
+  let importe; 
+  let descuento; 
+  let resultado; 
+
+  nombreProducto = prompt("Nombre de Producto"); 
+
+  importe = document.getElementById("txtIdImporte").value; 
+  importe = parseInt(importe); 
+
+  descuento = prompt("Descuento"); 
+  descuento = parseInt(descuento); 
+
+  resultado = importe - importe*(descuento/100); 
+
+document.getElementById("txtIdResultado").value = ("Usted compro " +nombreProducto+" con "+descuento+"% de descuento, el precio final es "+resultado);
 
 
 }
