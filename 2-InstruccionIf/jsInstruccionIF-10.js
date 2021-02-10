@@ -15,7 +15,7 @@ function mostrar()
 	//Aprobo >3 
 	//Vamos,,, <4
 
-	if(nota>3)
+	/*if(nota>3) // de esta forma hace 3 preguntas, 3, 9 y 10. 
 	{
 	  if(nota==10 || nota==9)
 	  {
@@ -31,6 +31,26 @@ function mostrar()
           mensaje = nota + " Vamos, la proxima se puede";
 	}
 	alert(mensaje); 
+    */
+	// Otra forma, de la siguien el procesador hace solo 2 comparaciones. 
+	// mayor a 8 y mayor a 3. 
+	if(nota>8)
+	{
+		mensaje = nota + " EXECELENTE"; 
+	}
+	else
+	{
+		if(nota>3)
+		{
+			mensaje = nota + " APROBÓ"; 
+		}
+		else
+		{
+			mensaje = nota + " Vamos, la proxima se puede"; 
+		}
+	}
+	alert(mensaje); 
+	 
 }//FIN DE LA FUNCIÓN
 
 // 	que igual no la explico. 
