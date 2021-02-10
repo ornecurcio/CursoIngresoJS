@@ -8,7 +8,8 @@ Al presionar el Botón, asignar una nota RANDOM al examen y mostrar:
 function mostrar()
 {
 	let nota; 
-	nota = Math.floor(Math.random() * 10) + 1; 
+	let mensaje; // con esto saco los alert
+	nota = Math.floor(Math.random() * 10) + 1; //esta es la formula que quiere octavio. 
 	
 	//Excelente 9||10
 	//Aprobo >3 
@@ -18,15 +19,19 @@ function mostrar()
 	{
 	  if(nota==10 || nota==9)
 	  {
-		  alert(nota + " EXECELENTE");
+		  mensaje = nota + " EXECELENTE";
 	  }
 	  else
 	  {
-          alert(nota + " APROBÓ");
+          mensaje = nota + " APROBÓ";
 	  }
 	}
 	else
 	{
-          alert(nota + " Vamos, la proxima se puede");
+          mensaje = nota + " Vamos, la proxima se puede";
 	}
+	alert(mensaje); 
 }//FIN DE LA FUNCIÓN
+
+// 	que igual no la explico. 
+	//Math.round(Math.random() *9 + 1; // es el que uso el otro profe; 
