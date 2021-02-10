@@ -8,7 +8,7 @@ Al presionar el Botón, asignar una nota RANDOM al examen y mostrar:
 function mostrar()
 {
 	let nota; 
-	nota = Math.round(Math.random () *9 + 1); 
+	nota = Math.floor(Math.random() * 10) + 1; 
 	
 	//Excelente 9||10
 	//Aprobo >3 
