@@ -46,3 +46,21 @@ function sumar()
  console.log(resultado); 
 
 }
+
+function promedio()
+{
+	let numeroUno; 
+	let numeroDos; 
+	let promedio; 
+
+	numeroUno = document.getElementById("txtIdNumeroDividendo").value;
+	numeroUno = parseInt(numeroUno); 
+	
+	numeroDos = document.getElementById("txtIdNumeroDivisor").value; 
+	numeroDos = parseInt(numeroDos); 
+
+	promedio = (numeroUno + numeroDos)/2
+
+	console.log(promedio);
+}
+
