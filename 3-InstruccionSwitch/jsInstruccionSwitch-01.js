@@ -12,19 +12,20 @@ function mostrar()
 	mes = document.getElementById("txtIdMes").value; 
 	switch(mes)      // no tiene comparacion logica, no hay mas ni menos, ni igual.  
  	{                // aca en una sola llave, el switch esta procesando todo al mismo tiempo
-		case"Enero": 
+		case"Enero": // el switch siempre se puede cambiar por if-else. pero no al revez siempre
 		     alert("Que comiences bien el año"); 
-		     break
+		     break;
 	    case"Marzo": 
 		     alert("¡A clases!"); 
-	         break
+	         break;
 		case"Julio": 
 		     alert("¡Se viene las vacaciones!"); 
-			 break
+			 break;
 		case"Diciembre": 
 		     alert("¡Felices Fiestas!"); 
-			 break	 
-      
+			 break;	 
+        default : 
+		     break; 
 	}
 	
 
