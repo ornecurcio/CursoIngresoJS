@@ -9,8 +9,8 @@ function mostrar()
 	let mes; 
 	let mensaje;
      
-	mes = document.getElementById("txtIdMes").value; 
-	
+	/*mes = document.getElementById("txtIdMes").value; 
+
 	if(mes=="Julio" || mes=="Agosto")
 	{
 		mensaje = "Abrigate que hace frio"; 
@@ -24,7 +24,7 @@ function mostrar()
 		mensaje = "Falta para el invierno"; 
 	}	
 	
-	alert(mensaje); 
+	alert(mensaje); */
 
 	/*switch(mes)
 	{
