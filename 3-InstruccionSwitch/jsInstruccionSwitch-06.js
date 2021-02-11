@@ -9,6 +9,7 @@ si NO está entre las 0 y las 24 : "la hora no existe."
 function mostrar()
 {
 	let hora; 
+	let mensaje; 
 
 	hora = document.getElementById("txtIdHora").value; 
 
