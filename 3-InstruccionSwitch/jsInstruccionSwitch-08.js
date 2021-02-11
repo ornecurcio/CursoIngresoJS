@@ -1,6 +1,25 @@
+/*Al seleccionar un destino informar si hace FRIO o CALOR en ese destino
+*/
 function mostrar()
 {
-	var destinoIngresado =txtIdDestino.value;
-	alert(destinoIngresado);
+	
 
-}//FIN DE LA FUNCIÓN
+	let destino; 
+	let mensaje; 
+
+	destino = document.getElementById("txtIdDestino").value; 
+
+	switch(destino)
+	{
+      case"Bariloche": 
+	  case "Ushuaia":
+		  mensaje = "Frio"; 
+		  break     
+	  default: 
+	       mensaje = "Calor"; 
+		   break; 
+	}
+	alert(mensaje);
+}
+
+//FIN DE LA FUNCIÓN
