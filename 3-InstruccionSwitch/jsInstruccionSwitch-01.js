@@ -1,4 +1,5 @@
-/*al seleccionar un mes informar.
+/* Ornela Curcio
+al seleccionar un mes informar.
 si es Enero: "que comiences bien el año!!!."
 si es Marzo: "a clases!!!."
 si es Julio: "se vienen las vacaciones!!!."
@@ -7,11 +8,10 @@ si es Diciembre: "Felices fiesta!!!."*/
 function mostrar()
 {
 	let mes;
-	let mensaje;  
-
+	 
 	mes = document.getElementById("txtIdMes").value; 
-	switch(mes)
-	{
+	switch(mes)      // no tiene comparacion logica, no hay mas ni menos, ni igual.  
+ 	{                // aca en una sola llave, el switch esta procesando todo al mismo tiempo
 		case"Enero": 
 		     alert("Que comiences bien el año"); 
 		     break
@@ -30,7 +30,7 @@ function mostrar()
 
 }//FIN DE LA FUNCIÓN
 
-
+                            //de esta forma el microprocesador hace 4 preguntas
 	/*if(mes=="Enero")
 	{
 		mensaje = "Que comiences bien el año"; 
