@@ -22,12 +22,14 @@ Cordoba tiene el precio sin descuento
 	let precio; 
 	let mensaje; 
 	let porcentaje; 
+	
 
 	precio = 15000; 
 	porcentaje = 0; 
 	estacion = document.getElementById("txtIdEstacion").value; 
 	lugar = document.getElementById("txtIdDestino").value;  
-	
+	 
+
 	switch(estacion)
 	{
 		case"Invierno": 
