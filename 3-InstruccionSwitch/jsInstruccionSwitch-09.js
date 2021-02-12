@@ -35,32 +35,32 @@ Cordoba tiene el precio sin descuento
 			{
 				case "Bariloche": 
 			   			porcentaje = 20; 
-			    		mensaje = "El precio es  "+ (precio + precio*porcentaje/100); 
+			    		mensaje = (precio + precio*porcentaje/100); 
 			            break;  
 				case "Mar del plata": 
 			    		porcentaje = 20; 
-						mensaje = "El precio es  "+ (precio - precio*porcentaje/100); 
+						mensaje = (precio - precio*porcentaje/100); 
 			            break; 
 				default:
 						porcentaje = 10; 
-						mensaje = "EL precio es  "+ (precio - precio*porcentaje/100); 
+						mensaje = (precio - precio*porcentaje/100); 
 						break; 
 		    }
 			break; 
-		case"Verano":
+		case"Verano": 
 		    switch(lugar)
 			{
 				case "Bariloche": 
 			    	porcentaje = 20; 
-			    	mensaje = "El precio es "+ (precio - precio*porcentaje/100); 
+			    	mensaje = (precio - precio*porcentaje/100); 
 			    	break; 
 				case "Mar del plata": 
 			    	porcentaje = 20; 
-					mensaje = "El precio es "+ (precio + precio*porcentaje/100); 
+					mensaje = (precio + precio*porcentaje/100); 
 			    	break; 
 				default:
 					porcentaje = 10; 
-					mensaje = "EL precio es "+ (precio + precio*porcentaje/100); 
+					mensaje = (precio + precio*porcentaje/100); 
 					break; 
 			}
 			break; 
@@ -69,17 +69,17 @@ Cordoba tiene el precio sin descuento
 	        switch(lugar)
 			{
               case "Cordoba": 
-			     mensaje = "El precio es " + precio; 
+			     mensaje = precio; 
 			     break;
 			 default: 
 			     porcentaje = 10; 
-			     mensaje = "El precio es "+ (precio + precio*porcentaje/100); 
+			     mensaje = (precio + precio*porcentaje/100); 
 			     break; 
 			}
 			break; 
 		   
 	}
-    alert(mensaje); 
+    alert("El precio es "+ mensaje); 
 }//FIN DE LA FUNCIÓN
 
 //usar default.
