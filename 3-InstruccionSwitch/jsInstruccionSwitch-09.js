@@ -36,16 +36,15 @@ Cordoba tiene el precio sin descuento
 				case "Bariloche": 
 			   			porcentaje = 20; 
 			    		mensaje = "El precio es  "+ (precio + precio*porcentaje/100); 
-			    break; 
-				case "Cataratas": 
-				case "Cordoba": 
-			    		porcentaje = 10; 
-						mensaje = "EL precio es  "+ (precio - precio*porcentaje/100); 
-				break; 
+			            break;  
 				case "Mar del plata": 
 			    		porcentaje = 20; 
 						mensaje = "El precio es  "+ (precio - precio*porcentaje/100); 
-			    break; 
+			            break; 
+				default:
+						porcentaje = 10; 
+						mensaje = "EL precio es  "+ (precio - precio*porcentaje/100); 
+						break; 
 		    }
 			break; 
 		case"Verano":
@@ -55,15 +54,14 @@ Cordoba tiene el precio sin descuento
 			    	porcentaje = 20; 
 			    	mensaje = "El precio es "+ (precio - precio*porcentaje/100); 
 			    	break; 
-				case "Cataratas": 
-				case "Cordoba": 
-			    	porcentaje = 10; 
-					mensaje = "EL precio es "+ (precio + precio*porcentaje/100); 
-					break; 
 				case "Mar del plata": 
 			    	porcentaje = 20; 
 					mensaje = "El precio es "+ (precio + precio*porcentaje/100); 
 			    	break; 
+				default:
+					porcentaje = 10; 
+					mensaje = "EL precio es "+ (precio + precio*porcentaje/100); 
+					break; 
 			}
 			break; 
 		case"Otoño":
@@ -73,9 +71,7 @@ Cordoba tiene el precio sin descuento
               case "Cordoba": 
 			     mensaje = "El precio es " + precio; 
 			     break;
-			  case "Bariloche":
-			  case"Cataratas": 
-			  case"Mar del plata": 
+			 default: 
 			     porcentaje = 10; 
 			     mensaje = "El precio es "+ (precio + precio*porcentaje/100); 
 			     break; 
@@ -85,3 +81,5 @@ Cordoba tiene el precio sin descuento
 	}
     alert(mensaje); 
 }//FIN DE LA FUNCIÓN
+
+//usar default.
