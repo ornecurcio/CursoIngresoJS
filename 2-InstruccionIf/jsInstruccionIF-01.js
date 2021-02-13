@@ -24,7 +24,35 @@ function mostrar()
    {
        alert("falso");
    }*/
+    
+   /*errores al escribir if
 
+   if(); no va con comas
+   if(<18){} falta el parametro
+   if(edad<13 && >17){} hay que poner siempre el parametro. 
    
+   if() error de sintaxis, N0 tenerlo asi o mal tabulado.
+   {
 
+   }
+   else
+   {
+
+   }
+   if(edad>12 || edad<18) error de logica, entra siempre 
+   if(edad <12 && edad>18) erro logica, no entra nadie. 
+   EJEMPLO CORRECTO 
+   if (edad<13)
+   {
+	   alert("niño"); 
+   }
+   else if(edad<18)// aca ya dividi el subconjunto niños, asiq qda de 13 a 17. 
+   { //esta llave es del if, anterior. Y borre una llave del else. 
+        alert("adolescente"); 
+   }
+   else
+   {
+        alert("adulto"); 
+   }
+   
 }//FIN DE LA FUNCIÓN
