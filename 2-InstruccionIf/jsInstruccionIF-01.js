@@ -1,7 +1,7 @@
 /* Ornela Curcio
 Al ingresar una edad que sea igual a 15, 
 mostrar el mensaje "niña bonita".*/
-function mostrar()
+/*function mostrar()
 {
 	//tomo la edad 
 	let edad; 
@@ -55,4 +55,65 @@ function mostrar()
         alert("adulto"); 
    }
    
-}//FIN DE LA FUNCIÓN
+}//FIN DE LA FUNCIÓN */
+
+/*1-Ornela Curcio 
+con if
+pedir a una persoan que fue de vaciones , la distancia que viajo y el tiempo que tardo, para calcular la velocidad
+e informar:
+60 km/hr = muy lento
+hata 80km/h= lento
+hasta 100= buen ritmo
+hasta 120= ahi de la ley
+mas = eso no se hace */
+
+function mostrar()
+{
+  let distancia; 
+  let tiempo; 
+  let velocidad; 
+  let mensaje
+
+  distancia = prompt("Distancia que viajo en KM"); 
+  distancia = parseFloat(distancia); 
+  
+  tiempo = prompt("Tiempo en horas"); 
+  tiempo = parseFloat(tiempo); 
+
+  velocidad = distancia/tiempo;
+  if(velocidad>121)
+  {
+	  mensaje = "Eso no se hace";
+  }
+  else
+  {   
+	  if(velocidad==120)
+	  {
+		  mensaje = "Ahi de la ley"; 
+	  }
+	  else
+	  {
+		  if(velocidad>80 && velocidad<100)
+		  {
+			  mensaje = "Buen Ritmo"; 
+		  }
+		  else
+		  { 
+			  if(velocidad<61)
+			  {
+			   mensaje = "Muy lento"; 
+			  }
+			  else
+			  {
+				mensaje = "Lento"; 
+			  }
+			  
+		  }
+	  }
+	   
+  }
+    
+
+    alert(mensaje); 
+
+}//FIN DE FUNCION
