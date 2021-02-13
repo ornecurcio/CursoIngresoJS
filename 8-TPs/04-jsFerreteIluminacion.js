@@ -29,6 +29,8 @@ function CalcularPrecio ()
      
      marca = document.getElementById("Marca").value; 
      descuento=0; 
+     
+     
      if(cantidadLamparitas>5)
      {
        descuento=50;
