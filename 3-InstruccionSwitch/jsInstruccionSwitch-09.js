@@ -28,9 +28,63 @@ Cordoba tiene el precio sin descuento
 	porcentaje = 0; 
 	estacion = document.getElementById("txtIdEstacion").value; 
 	lugar = document.getElementById("txtIdDestino").value;  
-	 
+	
+	if(estacion=="Primavera" || estacion=="Otoño")
+	{
+        if(lugar=="Cordoba")
+	        {
+		      porcentaje=0; 
+	        }
+	    else
+	    {
+		      porcentaje=10; 
+	    }
+	}
+	else
+	{
+	   if(estacion=="Invierno")
+	    { 
+		   if(lugar=="Bariloche")
+		    {
+			  porcentaje=20; 
+		    }
+		    else
+		    {
+			  if(lugar=="Mar del plata")
+			  {
+			  porcentaje=-20;
+			  }
+			  else
+		      {
+              porcentaje=-10; 
+		      }
+		    }
+		}
+		else
+		{
+			if(lugar=="Bariloche")
+			{
+				porcentaje = -20; 
+			}
+			else
+			{
+               if(lugar=="Mar del plata")
+			   {
+				porcentaje = 20;
+			   }
+			   else
+			   {
+                porcentaje=10;
+			   }				 
+			}
+		}
+	}
+	
+	mensaje = precio + (precio*porcentaje/100); 	   
 
-	switch(estacion)
+    alert("El precio es "+ mensaje);
+}//FIN DE LA FUNCION
+	/*switch(estacion)
 	{
 		case"Invierno": 
 			switch(lugar)
@@ -83,7 +137,8 @@ Cordoba tiene el precio sin descuento
 	}
     mensaje = precio + (precio*porcentaje/100); 	   
 
-    alert("El precio es "+ mensaje); 
-}//FIN DE LA FUNCIÓN
+    alert("El precio es "+ mensaje);*/
+
+//}//FIN DE LA FUNCIÓN
 
 //usar default.

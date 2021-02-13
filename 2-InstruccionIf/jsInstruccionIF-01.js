@@ -61,13 +61,13 @@ mostrar el mensaje "niña bonita".*/
 con if
 pedir a una persoan que fue de vaciones , la distancia que viajo y el tiempo que tardo, para calcular la velocidad
 e informar:
-60 km/hr = muy lento
-hata 80km/h= lento
-hasta 100= buen ritmo
-hasta 120= ahi de la ley
-mas = eso no se hace */
+60 km/hr = muy lento =60
+hata 80km/h= lento >60 <80
+hasta 100= buen ritmo >80 <100
+hasta 120= ahi de la ley >100 <120
+mas = eso no se hace >121 */ 
 
-/*function mostrar()
+function mostrar()
 {
   let distancia; 
   let tiempo; 
@@ -81,13 +81,47 @@ mas = eso no se hace */
   tiempo = parseFloat(tiempo); 
 
   velocidad = distancia/tiempo;
-  if(velocidad>121)
+
+     
+   if(velocidad<60)
+   {
+	   mensaje="muy lento"; 
+   }
+   else //defencto mayor a 60 
+   {
+     if(velocidad<81)
+	 {
+		 mensaje="lento";
+	 }
+	 else //defecto mayor a 80
+	 {
+      if(velocidad<101)
+	  {
+		mensaje="buen ritmo";
+	  }
+	  else //defecto mayor a 100
+	  {
+		if(velocidad>121)
+		{
+			mensaje="eso no se hace"; 
+		}
+		else// 100-120
+		{
+			mensaje="al limite"; 
+		}
+	  }
+	 }
+   }  
+   alert(mensaje); 
+}//FIN DE FUNCION 
+
+  /*if(velocidad>121)
   {
 	  mensaje = "Eso no se hace";
   }
-  else
+  else //defecto <120
   {   
-	  if(velocidad==120)
+	  if(velocidad<120 && velocidad>100) //defecto <100
 	  {
 		  mensaje = "Ahi de la ley"; 
 	  }
@@ -99,7 +133,7 @@ mas = eso no se hace */
 		  }
 		  else
 		  { 
-			  if(velocidad<61)
+			  if(velocidad==60)
 			  {
 			   mensaje = "Muy lento"; 
 			  }
@@ -112,24 +146,57 @@ mas = eso no se hace */
 	  }
 	   
   }
-    
+       
 
-    alert(mensaje); 
+//}FIN DE FUNCION
+   /*    
+   if(velocidad<60)
+   {
+	   "muy lento"
+   }
+   else //defencto mayor a 60 
+   {
+     if(velocidad<81)
+	 {
+		 "lento"
+	 }
+	 else //defecto mayor a 80
+	 {
+      if(velocidad<101)
+	  {
+		  "buen ritmo"
+	  }
+	  else //defecto mayor a 100
+	  {
+		if(velocidad>121)
+		{
+			"muy rapido"
+		}
+		else// 100-120
+		{
+			"al limite"
+		}
+	  }
+	 }
+   }  
+    */
 
-}//FIN DE FUNCION*/
+   
+
+
 
 /* Ornela Curcio 
 2- con if
 ingresar el nombre y los datos requeridos para calcular el IMC , 
 e informar a la persona si es:
-Bajo peso
-Peso normal
-Preobesidad
-Obesidad I
-Obesidad II
-Obesidad III*/
+Bajo peso <18.5
+Peso normal 18,5-24.9
+Preobesidad 25-26.9
+Obesidad I 27-29.9
+Obesidad II 30-34.9
+Obesidad III >40*/
 
-function mostrar()
+/*function mostrar()
 {
   let nombre; 
   let altura; 
@@ -189,4 +256,4 @@ function mostrar()
 
     alert(mensaje); 
 
-}//FIN DE FUNCION
+}//FIN DE FUNCION*/
