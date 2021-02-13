@@ -67,7 +67,7 @@ hasta 100= buen ritmo
 hasta 120= ahi de la ley
 mas = eso no se hace */
 
-function mostrar()
+/*function mostrar()
 {
   let distancia; 
   let tiempo; 
@@ -106,6 +106,79 @@ function mostrar()
 			  else
 			  {
 				mensaje = "Lento"; 
+			  }
+			  
+		  }
+	  }
+	   
+  }
+    
+
+    alert(mensaje); 
+
+}//FIN DE FUNCION*/
+
+/* Ornela Curcio 
+2- con if
+ingresar el nombre y los datos requeridos para calcular el IMC , 
+e informar a la persona si es:
+Bajo peso
+Peso normal
+Preobesidad
+Obesidad I
+Obesidad II
+Obesidad III*/
+
+function mostrar()
+{
+  let nombre; 
+  let altura; 
+  let peso
+  let IMC; 
+  let mensaje; 
+
+  nombre = prompt("Ingrese su nombre");  
+  
+  altura = prompt("Ingrese su altura en mts"); 
+  altura = parseFloat(altura); 
+
+  peso = prompt("Ingrese su peso en kg"); 
+  peso = parseFloat(peso); 
+
+  IMC = peso/(altura*altura); 
+
+  if(IMC>40)
+  {
+	  mensaje = nombre + " usted tiene Obesidad tipo III";
+  }
+  else
+  {   
+	  if(IMC>35)
+	  {
+		  mensaje = nombre + " usted tiene Obesidad tipo II";
+	  }
+	  else
+	  {
+		  if(IMC>30)
+		  {
+			  mensaje = nombre + " usted tiene Obesidad tipo I"; 
+		  }
+		  else
+		  { 
+			  if(IMC>25)
+			  {
+			   mensaje =nombre + " usted tiene preobesidad"; 
+			  }
+			  else
+			  {
+				if(IMC<18.5)
+				{
+					mensaje = nombre + " usted tiene bajo peso"; 
+				}
+				else
+				{
+					mensaje = nombre + " usted Peso Normal";
+				}
 			  }
 			  
 		  }
