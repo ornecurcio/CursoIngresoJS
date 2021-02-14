@@ -1,19 +1,39 @@
-/*
+/*Ornela Curcio 
 Al presionar el botón pedir  números  hasta que el usuario quiera,
 sumar los que son positivos y multiplicar los negativos.*/
 function mostrar()
 {
-	var contador;
-	var respuesta;
-	var sumaPositivos;
-	var multiplicacionNegativos;
+	let contador;
+	let respuesta;
+	let sumaPositivos;
+	let multiplicacionNegativos;
+	let numero; 
+
 	contador=0;
 	sumaPositivos=0;
 	multiplicacionNegativos=1;
 	respuesta='si';
 
+	while(respuesta == "si")
+	{
+		contador = contador + 1; 
+		numero = prompt("Ingrese numero"); 
+		numero = parseInt(numero); 
+        
+		if(numero>-1)
+		{
+		  sumaPositivos = sumaPositivos + numero; 
+		}
+        else
+		{
+          multiplicacionNegativos = multiplicacionNegativos * numero; 
+		}
 
-	txtIdSuma.value=sumaPositivos;
-	txtIdProducto.value=multiplicacionNegativos;
+		respuesta = prompt("¿Quiere ingresar otro numero?")
+	}
+
+
+	document.getElementById("txtIdSuma").value = sumaPositivos;
+	document.getElementById("txtIdProducto").value = multiplicacionNegativos;
 
 }//FIN DE LA FUNCIÓN
