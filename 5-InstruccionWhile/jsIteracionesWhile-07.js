@@ -1,4 +1,4 @@
-/*
+/*Ornela Curcio
 Al presionar el botón pedir  números  hasta que el USUARIO QUIERA 
 e informar la suma acumulada y el promedio.
 */
@@ -14,14 +14,14 @@ function mostrar()
 	acumulador=0;
 	respuesta='si';
 
-    while(respuesta == 'si')
+    while(respuesta == 'si')//primer parte logica
 	{
 	  contador = contador + 1; 
-      numeroIngresado = prompt("Ingrese numero " + contador); 
+      numeroIngresado = prompt("Ingrese numero " + contador); //2da parte logica
 	  numeroIngresado = parseInt(numeroIngresado); 
  
 	  acumulador = acumulador + numeroIngresado; 
-	  respuesta = prompt("¿Quiere ingresar otro numero?"); 
+	  respuesta = prompt("¿Quiere ingresar otro numero?"); //3ra parte para salir del bucle
 	}
     promedio = acumulador/contador; 
 
