@@ -10,7 +10,7 @@ function mostrar()
 	let respuesta;
 	let promedio; 
 
-	contador=0;
+	contador=0; 
 	acumulador=0;
 	respuesta='si';
 

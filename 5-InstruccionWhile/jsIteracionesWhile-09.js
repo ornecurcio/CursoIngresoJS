@@ -16,12 +16,13 @@ function mostrar()
 	{
 		numeroIngresado = prompt("Ingrese un numero: "); 
 		numeroIngresado = parseInt(numeroIngresado); 
-		banderaDelPrimero = "NO, no es el primero"//cambio la variable apenas se inicializo. 
+		 
         
 		if(banderaDelPrimero == "es el primero")
 		{
 			numeroMinimo = numeroIngresado; 
 			numeroMaximo = numeroIngresado; 
+			banderaDelPrimero = "NO, no es el primero"//cambio la variable apenas se inicializo.
 		}
 		else
 		{
@@ -38,6 +39,6 @@ function mostrar()
 		
 		respuesta=prompt("desea continuar?");
 	}
-	txtIdMaximo.value=numeroMaximo;
-	txtIdMinimmo.value=numeroMinimo;
+	document.getElementById("txtIdMaximo").value = numeroMaximo;
+	document.getElementById("txtIdMinimmo").value = numeroMinimo;
 }//FIN DE LA FUNCIÓN
