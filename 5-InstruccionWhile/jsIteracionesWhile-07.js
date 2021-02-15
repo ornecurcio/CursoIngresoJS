@@ -9,6 +9,7 @@ function mostrar()
 	let acumulador;
 	let respuesta;
 	let promedio; 
+	let valordeVerdad; 
 
 	contador=0; 
 	acumulador=0;
@@ -19,7 +20,12 @@ function mostrar()
 	  contador = contador + 1; 
       numeroIngresado = prompt("Ingrese numero " + contador); //2da parte logica
 	  numeroIngresado = parseInt(numeroIngresado); 
- 
+      valordeVerdad = isNaN(numeroIngresado); 
+	  while(isNaN(numeroIngresado)==true)
+	  {
+		numeroIngresado = prompt("Error, ingrese numero " + contador); //2da parte logica
+		numeroIngresado = parseInt(numeroIngresado);
+	  }
 	  acumulador = acumulador + numeroIngresado; 
 	  respuesta = prompt("¿Quiere ingresar otro numero?"); //3ra parte para salir del bucle
 	}
