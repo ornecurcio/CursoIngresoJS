@@ -40,5 +40,5 @@ function mostrar()
 		respuesta=prompt("desea continuar?");
 	}
 	document.getElementById("txtIdMaximo").value = numeroMaximo;
-	document.getElementById("txtIdMinimmo").value = numeroMinimo;
+	document.getElementById("txtIdMinimo").value = numeroMinimo; 
 }//FIN DE LA FUNCIÓN
