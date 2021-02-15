@@ -8,6 +8,7 @@ function mostrar()
 	let numeroMaximo;
 	let numeroMinimo;
 	let respuesta;
+	let valordeVerdad; 
 	//iniciar variables
 	banderaDelPrimero="es el primero";
 	respuesta='si';
@@ -16,8 +17,13 @@ function mostrar()
 	{
 		numeroIngresado = prompt("Ingrese un numero: "); 
 		numeroIngresado = parseInt(numeroIngresado); 
-		 
-        
+		valordeVerdad = isNaN(numeroIngresado); 
+		while(isNaN(numeroIngresado)==true)
+		{
+			numeroIngresado = prompt("Error, ingrese un numero: "); 
+			numeroIngresado = parseInt(numeroIngresado); 	
+		}
+		
 		if(banderaDelPrimero == "es el primero")
 		{
 			numeroMinimo = numeroIngresado; 
