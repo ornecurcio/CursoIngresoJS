@@ -8,6 +8,7 @@ function mostrar()
 	let sumaPositivos;
 	let multiplicacionNegativos;
 	let numero; 
+	let valordeVerdad; 
 
 	contador=0;
 	sumaPositivos=0;
@@ -19,7 +20,12 @@ function mostrar()
 		contador = contador + 1; 
 		numero = prompt("Ingrese numero"); 
 		numero = parseInt(numero); 
-        
+        valordeVerdad = isNaN(numero); 
+		while(isNaN(numero)==true)
+		{
+			numero = prompt("Error, ingrese numero"); 
+			numero = parseInt(numero); 
+		}
 		if(numero>-1)
 		{
 		  sumaPositivos = sumaPositivos + numero; 
