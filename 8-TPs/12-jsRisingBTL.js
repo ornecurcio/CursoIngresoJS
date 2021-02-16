@@ -25,36 +25,76 @@ function ComenzarIngreso ()
 	{
 		edadIngresada = prompt("Error, ingrese su edad"); 
 	}
-    sexoIngresado = prompt("Ingrese su sexo: M o F");
+    
+	sexoIngresado = prompt("Ingrese su sexo: M o F");
 	while(sexoIngresado!="F" && sexoIngresado!="M")
 	{
 		sexoIngresado = prompt("Error, ingrese F o M"); 
 	} 
-    estadoCivilIngresado = prompt("Ingrese su estado civil: 1-Soltero, 2-Casado, 3-Divorciado, 4-Viudo"); 
+    switch(sexoIngresado)
+	{
+		case"F": 
+			sexoIngresado = "Femenino"
+			break; 
+		case"M": 
+			sexoIngresado = "Masculino"
+			break; 	
+	}
+
+	estadoCivilIngresado = prompt("Ingrese su estado civil: 1-Soltero, 2-Casado, 3-Divorciado, 4-Viudo"); 
     while(isNaN(estadoCivilIngresado)==true || (estadoCivilIngresado>4) || (estadoCivilIngresado<1))
 	{
 		estadoCivilIngresado = prompt("Error, ingrese: 1-Soltero, 2-Casado, 3-Divorciado, 4-Viudo"); 
 	}
+	switch(estadoCivilIngresado)
+	{
+		case "1": 
+			estadoCivilIngresado = "Soltero"; 
+			break; 
+		case "2": 
+			estadoCivilIngresado = "Casado"; 
+			break; 
+		case "3": 
+			estadoCivilIngresado = "Divorciado";
+			break; 
+		case "4": 
+			estadoCivilIngresado = "Viudo"
+			break; 
+	}      
+	
 	sueldoBruto = prompt("Ingrese sueldo bruto");
 	while(isNaN(sueldoBruto)==true || sueldoBruto<8000)
 	{
 		sueldoBruto = prompt("Error, ingrese sueldo bruto"); 
 	}
+	
 	numeroLegajo = prompt("Ingrese numero de legajo, cuatro cifras"); 
 	while(isNaN(numeroLegajo)==true || numeroLegajo>9999 || numeroLegajo<0001)
 	{
 		numeroLegajo = prompt("Error, ingrese numero de legajo, 4 cifras"); 
 	}
-    nacionalidad = prompt("Ingrese nacionalidad: A-argentinos, E-extranjeros, N-nacionalizados");
+    
+	nacionalidad = prompt("Ingrese nacionalidad: A-argentinos, E-extranjeros, N-nacionalizados");
 	while(isNaN(nacionalidad)==false || nacionalidad!="A" && nacionalidad!="E" && nacionalidad!="N")
 	{
 		nacionalidad = prompt("Error, ingrese: A-argentinos, E-extranjeros, N-nacionalizados")
 	}    
-    
-	document.getElementById("txtIdEdad").value = edadIngresada; 
+    switch(nacionalidad)
+	{
+		case"A": 
+			nacionalidad = "Argentino"; 
+			break; 
+		case"E": 
+			nacionalidad = "Extranjero"; 
+			break; 
+		case"N": 
+			nacionalidad = "Nacionalizado"; 
+			break; 
+	}
+	document.getElementById("txtIdEdad").value = edadIngresada + " años"; 
 	document.getElementById("txtIdSexo").value = sexoIngresado; 
 	document.getElementById("txtIdEstadoCivil").value = estadoCivilIngresado; 
-	document.getElementById("txtIdSueldo").value = sueldoBruto; 
+	document.getElementById("txtIdSueldo").value = sueldoBruto + " pesos"; 
 	document.getElementById("txtIdLegajo").value = numeroLegajo; 
 	document.getElementById("txtIdNacionalidad").value = nacionalidad; 
 
