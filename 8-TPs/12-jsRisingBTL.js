@@ -98,5 +98,4 @@ function ComenzarIngreso ()
 	document.getElementById("txtIdLegajo").value = numeroLegajo; 
 	document.getElementById("txtIdNacionalidad").value = nacionalidad; 
 
-	//alert(edadIngresada); 
 }
