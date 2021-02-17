@@ -51,16 +51,16 @@ function ComenzarIngreso ()
 	}
 	switch(estadoCivilIngresado)
 	{
-		case "1": 
+		case 1: 
 			estadoCivilIngresado = "Soltero"; 
 			break; 
-		case "2": 
+		case 2: 
 			estadoCivilIngresado = "Casado"; 
 			break; 
-		case "3": 
+		case 3: 
 			estadoCivilIngresado = "Divorciado";
 			break; 
-		case "4": 
+		case 4: 
 			estadoCivilIngresado = "Viudo"
 			break; 
 	}      
