@@ -9,6 +9,7 @@ function mostrar()
 	let multiplicacionNegativos;
 	let numero; 
 	let valordeVerdad; 
+	let contadorNegativos; 
 
 	contador=0;
 	sumaPositivos=0;
@@ -21,6 +22,7 @@ function mostrar()
 		numero = prompt("Ingrese numero"); 
 		numero = parseInt(numero); 
         valordeVerdad = isNaN(numero); 
+
 		while(isNaN(numero)==true)
 		{
 			numero = prompt("Error, ingrese numero"); 
@@ -31,15 +33,21 @@ function mostrar()
 		  sumaPositivos = sumaPositivos + numero; 
 		}
         else
-		{
+		{ 
+		  contadorNegativos = contadorNegativos + 1; 
           multiplicacionNegativos = multiplicacionNegativos * numero; 
 		}
 
 		respuesta = prompt("¿Quiere ingresar otro numero?")
 	}
-
+    //if(multiplicacionNegativos==1)
+	if(contadorNegativos==0)
+	{
+		multiplicacionNegativos = 0; 
+	}
 
 	document.getElementById("txtIdSuma").value = sumaPositivos;
+	
 	document.getElementById("txtIdProducto").value = multiplicacionNegativos;
 
 }//FIN DE LA FUNCIÓN

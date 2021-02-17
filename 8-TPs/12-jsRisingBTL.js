@@ -21,6 +21,7 @@ function ComenzarIngreso ()
 	let nacionalidad;  
 
 	edadIngresada = prompt("Ingrese su edad")
+	edadIngresada = parseInt(edadIngresada); 
 	while(isNaN(edadIngresada)==true || edadIngresada<18 || edadIngresada>91)
 	{
 		edadIngresada = prompt("Error, ingrese su edad"); 
@@ -41,10 +42,12 @@ function ComenzarIngreso ()
 			break; 	
 	}
 
-	estadoCivilIngresado = prompt("Ingrese su estado civil: 1-Soltero, 2-Casado, 3-Divorciado, 4-Viudo"); 
+	estadoCivilIngresado = prompt("Ingrese su estado civil: 1-Soltero, 2-Casado, 3-Divorciado, 4-Viudo");
+	estadoCivilIngresado = parseInt(estadoCivilIngresado);  
     while(isNaN(estadoCivilIngresado)==true || (estadoCivilIngresado>4) || (estadoCivilIngresado<1))
 	{
 		estadoCivilIngresado = prompt("Error, ingrese: 1-Soltero, 2-Casado, 3-Divorciado, 4-Viudo"); 
+		estadoCivilIngresado = parseInt(estadoCivilIngresado); 
 	}
 	switch(estadoCivilIngresado)
 	{
@@ -63,15 +66,19 @@ function ComenzarIngreso ()
 	}      
 	
 	sueldoBruto = prompt("Ingrese sueldo bruto");
+	sueldoBruto = parseInt(sueldoBruto); 
 	while(isNaN(sueldoBruto)==true || sueldoBruto<8000)
 	{
 		sueldoBruto = prompt("Error, ingrese sueldo bruto"); 
+		sueldoBruto = parseInt(sueldoBruto); 
 	}
 	
 	numeroLegajo = prompt("Ingrese numero de legajo, cuatro cifras"); 
-	while(isNaN(numeroLegajo)==true || numeroLegajo>9999 || numeroLegajo<0001)
+	numeroLegajo = parseInt(numeroLegajo); 
+	while(isNaN(numeroLegajo)==true || numeroLegajo>9999 || numeroLegajo<1000)
 	{
 		numeroLegajo = prompt("Error, ingrese numero de legajo, 4 cifras"); 
+		numeroLegajo = parseInt(numeroLegajo); 
 	}
     
 	nacionalidad = prompt("Ingrese nacionalidad: A-argentinos, E-extranjeros, N-nacionalizados");
