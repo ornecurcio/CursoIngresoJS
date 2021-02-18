@@ -1,4 +1,5 @@
-/*Bienvenidos.
+/*Ornela Curcio 
+Bienvenidos.
 Realizar el algoritmo que permita ingresar la marca del producto, 
 el peso el cual debe ser entre 1 y 100 (validar),
 la temperatura de almacenamiento(entre -30 y 30) 
