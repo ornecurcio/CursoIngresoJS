@@ -48,3 +48,4 @@ function mostrar()
 	document.getElementById("txtIdMaximo").value = numeroMaximo;
 	document.getElementById("txtIdMinimo").value = numeroMinimo; 
 }//FIN DE LA FUNCIÓN
+
