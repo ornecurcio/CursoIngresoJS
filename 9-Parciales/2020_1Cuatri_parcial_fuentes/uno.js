@@ -67,7 +67,11 @@ function mostrar()
 		}
         
 		marcaIngresada = prompt("Ingrese marca"); 
-
+        while(isNaN(marcaIngresada)==false)
+		{
+			marcaIngresada = prompt("Error, ingrese marca"); 
+		}
+		
 		fabricanteIngresado = prompt("Ingrese fabricante"); 
 		while(isNaN(fabricanteIngresado)==false)
 		{
