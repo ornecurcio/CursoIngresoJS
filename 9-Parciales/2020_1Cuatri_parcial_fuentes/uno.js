@@ -123,11 +123,9 @@ function mostrar()
 	   }
 	   else
 	   {
-		 if(sumadorCantidadBarbijo>sumadorCantidadAlcohol)
-		 {
-			promedio = sumadorCantidadBarbijo/contadorBarbijo; 
+		    promedio = sumadorCantidadBarbijo/contadorBarbijo; 
 			mayorCantidadUnidades = "Barbijo"; 
-	     }
+	     
 		}
 	 }   
 	
