@@ -41,7 +41,7 @@ function mostrar()
 	contadorAlcohol=0; 
 	banderaJabon=1;
 
-	while(cantidadProductos<5)
+	while(contadorProductos<5)
 	{
         
 		productoIngresado = prompt("Ingrese producto"); 
@@ -131,8 +131,8 @@ function mostrar()
 		}
 	}
     
-	console.log("La marca mas cara de jabon es"+marcaJabonMasCaro+" con "+precioJabonMasCaro+" precio, en "+cantidadJabonMasCaro+" cantidad y de origen "+fabricanteJabonMasCaro); 
+	console.log("La marca mas cara de jabon es "+marcaJabonMasCaro+" con "+precioJabonMasCaro+"pesos de precio, "+cantidadJabonMasCaro+" unidades compradas y de origen "+fabricanteJabonMasCaro); 
 	console.log("El producto con mayor cantidad es "+productoMayorCantidad+", y el promedio por compra fue "+promedio); 
 	console.log("La cantidad total de jabon comprado fue de "+sumadorCantidadJabon+" unidades"); 
-	
+
 }//fin de funcion 
