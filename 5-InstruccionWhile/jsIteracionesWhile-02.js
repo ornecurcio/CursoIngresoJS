@@ -23,7 +23,6 @@ function mostrar()
 {
    let numeroIngresado; 
    let contadorNumero;  
-   let mensaje; 
    let contador; 
 
    contador = 0;
@@ -39,9 +38,16 @@ function mostrar()
 			numeroIngresado = parseInt(numeroIngresado);
 	   }
 
-	   if(numeroIngresado<21 && numeroIngresado>9)
+	   if(numeroIngresado<9)
+	   {}
+	   else 
 	   {
-         contadorNumero = contadorNumero + 1;
+         if(numeroIngresado>20)
+		 {}
+		 else
+		 {
+			 contadorNumero = contadorNumero + 1; 
+		 }
 	   }
      contador = contador + 1; 
 	}
