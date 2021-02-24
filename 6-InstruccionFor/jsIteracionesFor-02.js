@@ -1,4 +1,5 @@
-/*al presionar el botón mostrar 10 repeticiones con números , desde el 10 al 1.*/
+/*Ornela Curcio
+al presionar el botón mostrar 10 repeticiones con números , desde el 10 al 1.*/
 function mostrar()
 {
 
