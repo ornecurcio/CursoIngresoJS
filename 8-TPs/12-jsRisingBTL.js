@@ -10,7 +10,7 @@ D.	Sueldo bruto, no menor a 8000.
 E.	Número de legajo, numérico de 4 cifras, sin ceros a la izquierda.
 F.	Nacionalidad, “A” para argentinos, “E” para extranjeros, “N” para nacionalizados.
  */
-function ComenzarIngreso () 
+/*function ComenzarIngreso () 
 {
  	//definicion de variables
  	let edadIngresada;
@@ -105,4 +105,156 @@ function ComenzarIngreso ()
 	document.getElementById("txtIdLegajo").value = numeroLegajo; 
 	document.getElementById("txtIdNacionalidad").value = nacionalidad; 
 
-}
+}*/
+
+/*For 10 A-ingrese nombre , sexo , edad (
+	validar que si es mujer debe ser adolescente y si el hombre debe ser niño), 
+	altura (validar), temperatura corporal 
+	B- necesitamos saber: el nombre y el sexo de la persona mas alta , 
+	--de las mujeres el nombre de la mas joven ,--de los hombre el nombre del mas bajito , 
+	... solo si los hay
+*/
+	
+	//Ornela  Curcio
+
+function ComenzarIngreso () 
+{
+ 	//definicion de variables
+	let nombreIngresado; 
+ 	let edadIngresada;
+ 	let sexoIngresado;
+	let temperaturaCorporal; 
+	let altura; 
+	let alturaMasAlta;
+	let nombreMasAlta; 
+	let sexoMasAlta; 
+	let banderaMasAlta; 
+	let banderaMasJoven;  
+	let edadMujerMasJoven;
+	let nombreMujerMasJoven;
+	let banderaMasBajo;   
+	let alturaHombreMasBajo; 
+	let nombreHombreMasBajo
+	let respuesta; 
+
+	respuesta = "si"; 
+	banderaMasAlta = 1; 
+	banderaMasJoven = 1; 
+	banderaMasBajo = 1; 
+
+	while(respuesta=="si")
+	{  
+		nombreIngresado = prompt("Ingrese su nombre"); 
+		while(isNaN(nombreIngresado)==false)
+		{
+			nombreIngresado = prompt("Error, ingrese su nombre"); 
+		}
+
+		sexoIngresado = prompt("Ingrese su sexo: M o F");
+		while(sexoIngresado!="F" && sexoIngresado!="M")
+		{
+			sexoIngresado = prompt("Error, ingrese F o M"); 
+		} 
+
+		altura = prompt("Ingrese su altura en metros"); 
+		altura = parseFloat(altura); 
+		while(isNaN(altura)==true || altura>2.5 || altura<0.50)
+		{
+			altura = prompt("Error, ingrese su altura en metros"); 
+			altura = parseFloat(altura); 
+		}
+
+		switch(sexoIngresado)
+		{
+			case"F": 
+				sexoIngresado = "Femenino"; 
+				edadIngresada = prompt("Ingrese su edad"); 
+				while(isNaN(edadIngresada)==true || edadIngresada<12 || edadIngresada>18)
+				{
+					edadIngresada = prompt("Error, usted debe ser adolescente");
+				}
+				if(banderaMasJoven=1)
+				{
+					edadMujerMasJoven=edadIngresada; 
+					nombreMujerMasJoven = nombreIngresado; 
+					banderaMasJoven = 0; 
+				}
+				else
+				{
+					if(edadMujerMasJoven>edadIngresada)
+					{
+					edadMujerMasJoven=edadIngresada; 
+					nombreMujerMasJoven = nombreIngresado;
+					console.log("El nombre de la mujer mas joven es "+nombreMujerMasJoven+" con "+edadMujerMasJoven+" años ");
+					}
+					else
+					{
+						console.log("No hay mujeres"); 
+					}
+				}
+				break; 
+			case"M": 
+				sexoIngresado = "Masculino"; 
+				edadIngresada = prompt("Ingrese su edad"); 
+				while(isNaN(edadIngresada)==true || edadIngresada>12 || edadIngresada<4)
+				{
+					edadIngresada = prompt("Error, usted debe ser niño");
+				}
+				if(banderaMasBajo=1)
+				{
+					alturaHombreMasBajo = altura;
+					nombreHombreMasBajo = nombreIngresado; 
+					banderaMasBajo = 0; 
+				}
+				else
+				{
+					if(altura<alturaHombreMasBajo)
+					{
+					alturaHombreMasBajo = altura;
+					nombreHombreMasBajo = nombreIngresado; 
+					console.log("El nombre del hombre mas bajito es "+nombreHombreMasBajo+" y mide "+alturaHombreMasBajo+" metros");
+					}
+					else
+					{
+						console.log("NO hay varones"); 
+					}
+				}
+				break; 	
+		}
+		
+		temperaturaCorporal = prompt("Ingrese temperatura corporal");
+		temperaturaCorporal = parseInt(temperaturaCorporal); 
+		while(isNaN(temperaturaCorporal)==true || temperaturaCorporal<25 || temperaturaCorporal>42)
+		{
+			temperaturaCorporal = prompt("Error, ingrese temperatura corporal"); 
+			temperaturaCorporal = parseInt(temperaturaCorporal); 
+		}
+		
+		if(banderaMasAlta=1)
+		{
+			alturaMasAlta = altura;
+			nombreMasAlta = nombreIngresado; 
+			sexoMasAlta = sexoIngresado; 
+			banderaMasAlta = 0; 
+		}
+		else
+		{
+           if(altura>alturaMasAlta)
+		   {
+			alturaMasAlta = altura;
+			nombreMasAlta = nombreIngresado; 
+			sexoMasAlta = sexoIngresado; 
+		   }
+		   
+		}
+
+		console.log("Usted se llama "+ nombreIngresado);
+		console.log("usted es "+ sexoIngresado); 
+		console.log("Usted tiene "+edadIngresada + " años"); 
+		console.log("Usted mide "+ altura + " metros"); 
+		console.log("usted tiene "+temperaturaCorporal+" grados de temperatura"); 
+
+		respuesta = prompt("quiere ingresar una nueva persona?"); 
+	}
+    console.log("El nombre de la persona mas alta es "+nombreMasAlta+" de sexo "+sexoMasAlta+" y mide "+alturaMasAlta+" metros"); 
+}//fin funcion
