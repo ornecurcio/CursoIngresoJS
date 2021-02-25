@@ -16,10 +16,10 @@ function mostrar()
 		
 	   if(contador%2==0)
 	   {
-		   console.log(contador); 
+		    console.log(contador); //aca muestra el numero par por cada ronda. 
 			contadordeNumerosPares=contadordeNumerosPares+1;
 		    
-		   console.log("total de numeros pares: "+contadordeNumerosPares);  
+		   console.log("total de numeros pares: "+contadordeNumerosPares);  // aca muestra el total de numeros. 
 	   }
 	
 	}
