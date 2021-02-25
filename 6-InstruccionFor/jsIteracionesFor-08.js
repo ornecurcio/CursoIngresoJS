@@ -4,19 +4,23 @@ function mostrar()
 {
     let numeroIngresado; 
 	let numeroAnterior; 
-
+	let contadorNumeroPrimo; 
+	let limite; 
+    
 	numeroIngresado=prompt("Ingrese nuemero"); 
+	limite=numeroIngresado/2; 
 
-	for(numeroAnterior=2;numeroAnterior<numeroIngresado;numeroAnterior++)
+	for(numeroAnterior=2;numeroAnterior<limite;numeroAnterior++)
 	{
           if(numeroIngresado%numeroAnterior==0)
 		  {
             break; 
-		  }
+		  }	  
 		  
+		 for(numeroAnterior-1;numeroAnterior<limite;numeroAnterior--)  
 	}
-
-    if(numeroAnterior==numeroIngresado)
+    
+    if(numeroAnterior==limite)
 	{
     	alert("es primo"); 
 	}
@@ -24,12 +28,5 @@ function mostrar()
 	{
 		alert("no es primo"); 
 	}
-	if(numeroAnterior!=numeroIngresado)
-	{
-		alert("no es primo"); 
-	}
-    else
-	{
-		alert("es primo"); 
-	}
+	
 }//FIN DE LA FUNCIÓN
