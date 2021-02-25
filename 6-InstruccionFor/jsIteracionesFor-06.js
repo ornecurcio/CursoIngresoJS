@@ -3,19 +3,22 @@ y mostrar la cantidad de numeros pares encontrados.*/
 function mostrar()
 {
 	let numeroIngresado; 
-	let numerosPares; 
+	let contadordeNumerosPares; 
 	let contador; 
 
+	contadordeNumerosPares=0; 
 	numeroIngresado = prompt("Ingrese un numero"); 
 	numeroIngresado = parseInt(numeroIngresado); 
 
-	for(contador=1;contador<numeroIngresado;contador+1)
+	for(contador=1;contador<numeroIngresado;contador++)
 	{  
 		
-	   if(numeroIngresado%2==0)
+	   if(contador%2==0)
 	   {
-		   console.log(numerosPares); 
-		   numerosPares=numerosPares+1; 
+		   console.log(contador); 
+			contadordeNumerosPares=contadordeNumerosPares+1;
+		    
+		   console.log("total de numeros pares: "+contadordeNumerosPares);  
 	   }
 	
 	}
