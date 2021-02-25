@@ -1,16 +1,22 @@
 /*Ornela Curcio
 Al presionar el botón pedir  números  hasta que el usuario quiera,
-mostrar el número máximo y el número mínimo ingresado.*/
-/*function mostrar()
+mostrar el número máximo y el número mínimo ingresado.el menor de los pares y el mayor de los negativos ...solo si hay)*/
+function mostrar()
 {	// declarar variables
 	let banderaDelPrimero;//3 partes, inicializacion, validacion, cambio. 
 	let numeroIngresado;
 	let numeroMaximo;
 	let numeroMinimo;
+	let menorNumeroParIngresado;
+	let mayorNumeroNegativoIngresado;
+	let baderaNumeroPar; 
+	let banderaNegativo;
 	let respuesta;
-	let valordeVerdad; 
+	 
 	//iniciar variables
 	banderaDelPrimero="es el primero";
+	banderaNumeroPar = 1;
+	banderaNegativo = 1; 
 	respuesta='si';
 
 	while(respuesta=="si")
@@ -42,31 +48,6 @@ mostrar el número máximo y el número mínimo ingresado.*/
 				numeroMaximo = numeroIngresado; 
 			}	
 		}
-		
-		respuesta=prompt("desea continuar?");
-	}
-	document.getElementById("txtIdMaximo").value = numeroMaximo;
-	document.getElementById("txtIdMinimo").value = numeroMinimo; 
-}//FIN DE LA FUNCIÓN*/
-
-//Ornela Curcio while 09(el menor de los pares y el mayor de los negativos ...solo si hay)
-//Al presionar el botón pedir números hasta que el usuario quiera, 
-function mostrar()
-{
-	let numeroIngresado;
-	let menorNumeroParIngresado;
-	let mayorNumeroNegativoIngresado;
-	let respuesta; 
-	let baderaNumeroPar; 
-	let banderaNegativo; 
-
-	banderaNumeroPar = 1;
-	banderaNegativo = 1; 
-	
-    
-	for(respuesta="si";respuesta=="si";respuesta=prompt("desea continuar?"))
-	{
-        numeroIngresado=prompt(numeroIngresado); 
 		if(numeroIngresado%2==0)
 		{
 			if(banderaNumeroPar==1) 		
@@ -82,7 +63,6 @@ function mostrar()
 				}
 			}	
 		}
-
 		if(numeroIngresado<0)
 		{
 			if(banderaNegativo==1) 		
@@ -96,16 +76,15 @@ function mostrar()
 				{
                   mayorNumeroNegativoIngresado = numeroIngresado; 
 				}
-			}	
+			}
 		}
-		
-		console.log(menorNumeroParIngresado); 
-		console.log(mayorNumeroNegativoIngresado); 
-		
+		respuesta=prompt("desea continuar?");
 	}
+	document.getElementById("txtIdMaximo").value = numeroMaximo;
+	document.getElementById("txtIdMinimo").value = numeroMinimo; 
+	console.log(menorNumeroParIngresado); 
+	console.log(mayorNumeroNegativoIngresado); 
+}//FIN DE LA FUNCIÓN*/
 
-	
 
-  }
-  
 
