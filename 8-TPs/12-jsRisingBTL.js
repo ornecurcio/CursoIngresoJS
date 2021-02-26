@@ -195,7 +195,7 @@ function ComenzarIngreso ()
 				contadorEdadMujeres=contadorEdadMujeres+1; 
                 acumuladorEdadMujeres=acumuladorEdadMujeres+edadIngresada; 
 
-				if(contadorEdadMujeres=1)
+				if(contadorEdadMujeres==1)
 				{
 					edadMujerMasJoven=edadIngresada; 
 					nombreMujerMasJoven = nombreIngresado; 
@@ -206,11 +206,6 @@ function ComenzarIngreso ()
 					{
 					edadMujerMasJoven=edadIngresada; 
 					nombreMujerMasJoven = nombreIngresado;
-					mensajeMasJoven = "El nombre de la mujer mas joven es "+nombreMujerMasJoven+" con "+edadMujerMasJoven+" años ";
-					}
-					else
-					{
-						mensajeMasJoven = "No hay mujeres"; 
 					}
 				}
 				break; 
@@ -224,7 +219,7 @@ function ComenzarIngreso ()
 				contadorEdadHombres=contadorEdadHombres+1; 
 				acumuladorEdadHombres=acumuladorEdadHombres+edadIngresada; 
 
-				if(contadorEdadHombres=1)
+				if(contadorEdadHombres==1)
 				{
 					alturaHombreMasBajo = altura;
 					nombreHombreMasBajo = nombreIngresado; 
@@ -235,11 +230,6 @@ function ComenzarIngreso ()
 					{
 					alturaHombreMasBajo = altura;
 					nombreHombreMasBajo = nombreIngresado; 
-					mensajeMasBajo="El nombre del hombre mas bajito es "+nombreHombreMasBajo+" y mide "+alturaHombreMasBajo+" metros";
-					}
-					else
-					{
-					mensajeMasBajo = "No hay hombres";
 					}
 				}
 				break; 	
@@ -253,7 +243,7 @@ function ComenzarIngreso ()
 			temperaturaCorporal = parseInt(temperaturaCorporal); 
 		}
 		
-		if(banderaMasAlta=1)
+		if(banderaMasAlta==1)
 		{
 			alturaMasAlta = altura;
 			nombreMasAlta = nombreIngresado; 
@@ -270,7 +260,7 @@ function ComenzarIngreso ()
 		   }
 		   
 		}
-		if(altura>1.6)
+		if(altura>1.59)
 		{
 			contadorAlturaMayorUnoSesenta = contadorAlturaMayorUnoSesenta + 1; 
 			{
@@ -278,17 +268,9 @@ function ComenzarIngreso ()
 				{
 					contadorMujeresAlturaMayorUnoSesenta = contadorMujeresAlturaMayorUnoSesenta + 1;
 				}
-				else
-				{
-					mensajeAltura = "No hay mujeres"; 
-				}
-			}	
+			}
 		}
-		else
-		{
-			mensajeAltura = "No hay personas de mas de 1.60"; 
-		}
-
+		
 		console.log("Usted se llama "+ nombreIngresado);
 		console.log("usted es "+ sexoIngresado); 
 		console.log("Usted tiene "+edadIngresada + " años"); 
@@ -298,39 +280,44 @@ function ComenzarIngreso ()
 		respuesta = prompt("quiere ingresar una nueva persona?"); 
 	}
 
-     if(contadorMujeresAlturaMayorUnoSesenta>1)
+     if(contadorMujeresAlturaMayorUnoSesenta>0)
 	 {
 	    porcentajeMujeresAlturaMayorUnoSesenta = contadorAlturaMayorUnoSesenta / contadorMujeresAlturaMayorUnoSesenta *100;
 		mensajeAltura= "El porcentaje de mujeres de mas de 1.60 es "+porcentajeMujeresAlturaMayorUnoSesenta
 	 }
 	 else
 	 {
-		 mensajeAltura; 
+		 mensajeAltura = "La cantidad de personas mayor a 1.60 es "+contadorAlturaMayorUnoSesenta; 
 	 }
     
-	 if(contadorEdadMujeres>1)
+	 if(contadorEdadMujeres>0)
 	 {
         promedioEdadMujeres = acumuladorEdadMujeres/contadorEdadMujeres;
-		mensajePromedioMujeres = "El promedio de edad de las mujeres es "+ promedioEdadMujeres; 
+		mensajePromedioMujeres = "El promedio de edad de las mujeres es "+ promedioEdadMujeres+" años. "; 
+		mensajeMasJoven = "El nombre de la mujer mas joven es "+nombreMujerMasJoven+" con "+edadMujerMasJoven+" años ";
 	 }
 	 else
 	 {
 		mensajePromedioMujeres = "NO hay mujeres"; 
+		mensajeMasJoven = " "; 
 	 }
 	 
-	 if(contadorEdadHombres>1)
+	 if(contadorEdadHombres>0)
 	 {
 		promedioEdadHombres = acumuladorEdadHombres/contadorEdadHombres;
-		mensajePromedioHombres = "El promedio de la edad de los hombres es "+promedioEdadHombres;  
+		mensajePromedioHombres = "El promedio de la edad de los hombres es "+promedioEdadHombres+" años. ";  
+		mensajeMasBajo="El nombre del hombre mas bajito es "+nombreHombreMasBajo+" y mide "+alturaHombreMasBajo+" metros. ";
 	 }
      else
 	 {
 		 mensajePromedioHombres = "NO hay hombres"; 
+		 mensajeMasBajo = " "; 
 	 }
     console.log("El nombre de la persona mas alta es "+nombreMasAlta+" de sexo "+sexoMasAlta+" y mide "+alturaMasAlta+" metros"); 
-	console.log(mensajeMasJoven + mensajePromedioMujeres + promedioEdadMujeres); 
-	console.log(mensajeMasBajo + mensajePromedioHombres + promedioEdadHombres); 
-	console.log(mensajeAltura); 
-	console.log(mensajePromedioHombres); 
-	console.log(mensajePromedioMujeres); 
+	console.log(mensajeMasJoven + mensajePromedioMujeres); 
+	console.log(mensajeMasBajo + mensajePromedioHombres); 
+	console.log(mensajeAltura);  
 }//fin funcion
+
+
+
