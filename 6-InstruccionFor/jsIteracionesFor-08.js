@@ -4,9 +4,12 @@ function mostrar()
 {
     let numeroIngresado; 
 	let numeroAnterior; 
-	let contadorNumeroPrimo; 
+	let contadorDivisores; 
+	let contadorNumerosPrimos; 
 	let limite; 
     
+	contadorDivisores = 0;
+	contadorNumerosPrimos = 0; 
 	numeroIngresado=prompt("Ingrese nuemero"); 
 	limite=numeroIngresado/2; 
 
@@ -17,8 +20,19 @@ function mostrar()
             break; 
 		  }	  
 		  
-		 for(numeroAnterior-1;numeroAnterior<limite;numeroAnterior--)  
+		  for(contador=2;contador<numeroIngresado;contador++)
+		  {  
+			 if(numeroIngresado%contador==0)
+			 {
+				  contadorDivisores = contadorDivisores + 1;			
+			 }
+			 if(contadorDivisores==2)
+			 {
+				 contadorNumerosPrimos = contadorNumerosPrimos+1; 
+			 }
+		  }
 	}
+	
     
     if(numeroAnterior==limite)
 	{

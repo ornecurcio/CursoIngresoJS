@@ -113,6 +113,9 @@ F.	Nacionalidad, “A” para argentinos, “E” para extranjeros, “N” para
 	B- necesitamos saber: el nombre y el sexo de la persona mas alta , 
 	--de las mujeres el nombre de la mas joven ,--de los hombre el nombre del mas bajito , 
 	... solo si los hay
+	C-- el promedio de edad entre los hombres, el promedio de edad entre las mujeres, 
+	la cantidad de personas que miden mas de 1,60 metros,
+	 y el porcentaje de mujeres sobre el total de personas de mas de 1,60 mts
 */
 	
 	//Ornela  Curcio
@@ -129,19 +132,35 @@ function ComenzarIngreso ()
 	let nombreMasAlta; 
 	let sexoMasAlta; 
 	let banderaMasAlta; 
-	let banderaMasJoven;  
+	let mensajeAltura; 
 	let edadMujerMasJoven;
 	let nombreMujerMasJoven;
-	let banderaMasBajo;   
+	let mensajeMasJoven; 
+    let mensajePromedioMujeres; 
 	let alturaHombreMasBajo; 
 	let nombreHombreMasBajo
+	let mensajeMasBajo; 
+	let contadorEdadHombres; 
+	let acumuladorEdadHombres; 
+	let promedioEdadHombres; 
+	let mensajePromedioHombres; 
+	let contadorEdadMujeres;
+	let acumuladorEdadMujeres; 
+    let promedioEdadMujeres;  
+	let contadorAlturaMayorUnoSesenta; 
+	let contadorMujeresAlturaMayorUnoSesenta; 
+	let porcentajeMujeresAlturaMayorUnoSesenta;
 	let respuesta; 
 
 	respuesta = "si"; 
-	banderaMasAlta = 1; 
-	banderaMasJoven = 1; 
-	banderaMasBajo = 1; 
-
+	banderaMasAlta = 1;
+	contadorEdadHombres=0; 
+	contadorEdadMujeres=0; 
+	acumuladorEdadHombres=0; 
+	acumuladorEdadMujeres=0; 
+	contadorAlturaMayorUnoSesenta=0; 
+	contadorMujeresAlturaMayorUnoSesenta=0;  
+	
 	while(respuesta=="si")
 	{  
 		nombreIngresado = prompt("Ingrese su nombre"); 
@@ -173,11 +192,13 @@ function ComenzarIngreso ()
 				{
 					edadIngresada = prompt("Error, usted debe ser adolescente");
 				}
-				if(banderaMasJoven=1)
+				contadorEdadMujeres=contadorEdadMujeres+1; 
+                acumuladorEdadMujeres=acumuladorEdadMujeres+edadIngresada; 
+
+				if(contadorEdadMujeres=1)
 				{
 					edadMujerMasJoven=edadIngresada; 
 					nombreMujerMasJoven = nombreIngresado; 
-					banderaMasJoven = 0; 
 				}
 				else
 				{
@@ -185,11 +206,11 @@ function ComenzarIngreso ()
 					{
 					edadMujerMasJoven=edadIngresada; 
 					nombreMujerMasJoven = nombreIngresado;
-					console.log("El nombre de la mujer mas joven es "+nombreMujerMasJoven+" con "+edadMujerMasJoven+" años ");
+					mensajeMasJoven = "El nombre de la mujer mas joven es "+nombreMujerMasJoven+" con "+edadMujerMasJoven+" años ";
 					}
 					else
 					{
-						console.log("No hay mujeres"); 
+						mensajeMasJoven = "No hay mujeres"; 
 					}
 				}
 				break; 
@@ -200,11 +221,13 @@ function ComenzarIngreso ()
 				{
 					edadIngresada = prompt("Error, usted debe ser niño");
 				}
-				if(banderaMasBajo=1)
+				contadorEdadHombres=contadorEdadHombres+1; 
+				acumuladorEdadHombres=acumuladorEdadHombres+edadIngresada; 
+
+				if(contadorEdadHombres=1)
 				{
 					alturaHombreMasBajo = altura;
 					nombreHombreMasBajo = nombreIngresado; 
-					banderaMasBajo = 0; 
 				}
 				else
 				{
@@ -212,11 +235,11 @@ function ComenzarIngreso ()
 					{
 					alturaHombreMasBajo = altura;
 					nombreHombreMasBajo = nombreIngresado; 
-					console.log("El nombre del hombre mas bajito es "+nombreHombreMasBajo+" y mide "+alturaHombreMasBajo+" metros");
+					mensajeMasBajo="El nombre del hombre mas bajito es "+nombreHombreMasBajo+" y mide "+alturaHombreMasBajo+" metros";
 					}
 					else
 					{
-						console.log("NO hay varones"); 
+					mensajeMasBajo = "No hay hombres";
 					}
 				}
 				break; 	
@@ -247,6 +270,24 @@ function ComenzarIngreso ()
 		   }
 		   
 		}
+		if(altura>1.6)
+		{
+			contadorAlturaMayorUnoSesenta = contadorAlturaMayorUnoSesenta + 1; 
+			{
+	            if(sexoIngresado=="F")
+				{
+					contadorMujeresAlturaMayorUnoSesenta = contadorMujeresAlturaMayorUnoSesenta + 1;
+				}
+				else
+				{
+					mensajeAltura = "No hay mujeres"; 
+				}
+			}	
+		}
+		else
+		{
+			mensajeAltura = "No hay personas de mas de 1.60"; 
+		}
 
 		console.log("Usted se llama "+ nombreIngresado);
 		console.log("usted es "+ sexoIngresado); 
@@ -256,5 +297,40 @@ function ComenzarIngreso ()
 
 		respuesta = prompt("quiere ingresar una nueva persona?"); 
 	}
+
+     if(contadorMujeresAlturaMayorUnoSesenta>1)
+	 {
+	    porcentajeMujeresAlturaMayorUnoSesenta = contadorAlturaMayorUnoSesenta / contadorMujeresAlturaMayorUnoSesenta *100;
+		mensajeAltura= "El porcentaje de mujeres de mas de 1.60 es "+porcentajeMujeresAlturaMayorUnoSesenta
+	 }
+	 else
+	 {
+		 mensajeAltura; 
+	 }
+    
+	 if(contadorEdadMujeres>1)
+	 {
+        promedioEdadMujeres = acumuladorEdadMujeres/contadorEdadMujeres;
+		mensajePromedioMujeres = "El promedio de edad de las mujeres es "+ promedioEdadMujeres; 
+	 }
+	 else
+	 {
+		mensajePromedioMujeres = "NO hay mujeres"; 
+	 }
+	 
+	 if(contadorEdadHombres>1)
+	 {
+		promedioEdadHombres = acumuladorEdadHombres/contadorEdadHombres;
+		mensajePromedioHombres = "El promedio de la edad de los hombres es "+promedioEdadHombres;  
+	 }
+     else
+	 {
+		 mensajePromedioHombres = "NO hay hombres"; 
+	 }
     console.log("El nombre de la persona mas alta es "+nombreMasAlta+" de sexo "+sexoMasAlta+" y mide "+alturaMasAlta+" metros"); 
+	console.log(mensajeMasJoven + mensajePromedioMujeres + promedioEdadMujeres); 
+	console.log(mensajeMasBajo + mensajePromedioHombres + promedioEdadHombres); 
+	console.log(mensajeAltura); 
+	console.log(mensajePromedioHombres); 
+	console.log(mensajePromedioMujeres); 
 }//fin funcion

@@ -1,4 +1,5 @@
-/*al presionar el botón pedir un número. 
+/*Ornela Curcio 
+al presionar el botón pedir un número. 
 mostrar los numeros divisores desde el 1 al número ingresado,
  y mostrar la cantidad de numeros divisores encontrados.*/
 
@@ -17,7 +18,7 @@ mostrar los numeros divisores desde el 1 al número ingresado,
 	   if(numeroIngresado%contador==0)
 	   {
 		    contadorDivisores=contadorDivisores+1;
-			console.log(contador); 
+			console.log(contador); //aca  muestro los numeros divisores. 
 	   }
 	}
     console.log("total de numeros divisores: "+contadorDivisores);  
