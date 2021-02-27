@@ -120,7 +120,7 @@ F.	Nacionalidad, “A” para argentinos, “E” para extranjeros, “N” para
 	
 	//Ornela  Curcio
 
-function ComenzarIngreso () 
+/*function ComenzarIngreso () 
 {
  	//definicion de variables
 	let nombreIngresado; 
@@ -317,7 +317,322 @@ function ComenzarIngreso ()
 	console.log(mensajeMasJoven + mensajePromedioMujeres); 
 	console.log(mensajeMasBajo + mensajePromedioHombres); 
 	console.log(mensajeAltura);  
-}//fin funcion
+}//fin funcion*/
 
+/*Para un censo municipal debemos cargar los datos de TODAS las mascotas de nuestra veterinaria
+necesitan saber si es un gato o un perrro u "otra cosa",(solo hay esos tres tipos)
+el tipo de pelaje (corto, largo , sin pelo),
+la edad de la mascota (edad validada);
+el nombre (una palabra) 
+la raza  (una palabra) 
+el peso (peso validado) 
+el estadoClinico (enfermo,internado o adopcion)
+la temperaruta corporal
+
+y nos piden informar solo si existe
+a)El perro mas pesado
+b)El porcentaje de enfermos sobre el total de mascotas
+c)El nombre de la ultima mascota de tipo "otra cosa"
+d)El animal sin pelo con menor temperatura corporal
+e)Que tipo de mascota(gato o un perrro u "otra cosa") que tiene el mayor promedio de temperatura corporal
+f)Sumando gatos y perros que porcentaje del total de mascotas son?
+g)Que estado clinico tiene la menor cantidad de mascotas       
+H)Cual es el promedio de kilos de peso de tomando todas las mascotas 
+i)El nombre y raza del gato sin pelos mas liviano
+
+ */
+
+ 
+function ComenzarIngreso () 
+{
+ 	//definicion de variables
+	let nombreIngresado; 
+ 	let edadIngresada;
+ 	let animalIngresado;
+	let temperaturaCorporal; 
+	let pesoIngresado; 
+	let razaIngresada; 
+	let estadoClinico; 
+	let tipoDePelo; 
+	let pesoPerroMasPesado; 
+	let nombrePerroMasPesado; 
+	let porcentajeAnimalesEnfermos; 
+	let contadorAnimalesEnfermos; 
+	let contadorAnimalesInternados; 
+	let contadorAnimalesAdopcion; 
+	let contadorAnimales; 
+	let nombreUltimaMascotaOtraCosa; 
+	let temperaturaAnimalSinPeloConMenorTemperatura; 
+	let tipoDeAnimalSinPeloConMenorTemperatura; 
+	let nombreDeAnimalSinPeloConMenorTemperatura; 
+	let tipoDeAnimalConMayorPromedioDeTemperaturaCorporal; 
+	let contadorPerro; 
+	let contadorGato; 
+	let contadorOtraCosa; 
+	let acumuladorTemperaturaPerro; 
+	let acumuladorTemperaturaGato; 
+	let acumuladorTemperaturaOtraCosa; 
+	let promedioTemperaturaPerro; 
+	let promedioTemperaturaGato; 
+	let promedioTemperaturaOtraCosa; 
+	let acumuladorPesoMascotas; 
+	let promedioPesoMascotas; 
+	let pesoGatoSinPeloMasLiviano; 
+	let nombreGatoSinPelosMasLiviano; 
+	let razaGatoSinPelosMasLiviano;
+	let porcentajePerroMasGato; 
+	let estadoClinicoConMenosMascotas; 
+	let contadorSinPelo;
+	let mensajeSinPelo;   
+	let mensajePerroMasPesado; 
+	let mensajeGatoSinPelo; 
+
+
+	let respuesta; 
+
+	respuesta = "si"; 
+	contadorAnimales = 0; 
+	contadorAnimalesEnfermos = 0; 
+	contadorAnimalesAdopcion = 0; 
+	contadorAnimalesInternados = 0; 
+	contadorGato = 0; 
+	contadorPerro = 0; 
+	contadorOtraCosa = 0;
+	acumuladorPesoMascotas = 0; 
+	acumuladorTemperaturaGato = 0; 
+	acumuladorTemperaturaOtraCosa = 0; 
+	acumuladorTemperaturaPerro = 0; 
+	contadorSinPelo = 0; 
+	
+	while(respuesta=="si")
+	{  
+		nombreIngresado = prompt("Ingrese nombre de mascota"); 
+		while(isNaN(nombreIngresado)==false)
+		{
+			nombreIngresado = prompt("Error, ingrese nombre de mascota"); 
+		}
+		razaIngresada = prompt("Ingrese una raza"); 
+		while(isNaN(razaIngresada)==false)
+		{
+			razaIngresada = prompt("Error, ingrese una raza"); 
+		}
+		animalIngresado = prompt("Ingrese perro, gato u 'otra cosa'");
+		while(animalIngresado!="perro" && animalIngresado!="gato" && animalIngresado!="otra cosa")
+		{
+			animalIngresado = prompt("Error, ingrese perro, gato u 'otra cosa'"); 
+		} 
+		pesoIngresado = prompt("Ingrese el peso del animal en kilos"); 
+		pesoIngresado = parseFloat(pesoIngresado); 
+		while(isNaN(pesoIngresado)==true || pesoIngresado>0.5 || pesoIngresado<200)
+		{
+			pesoIngresado = prompt("Error, ingrese el peso de su mascota en kilos"); 
+			pesoIngresado = parseFloat(pesoIngresado); 
+		}
+        estadoClinico = prompt("Ingrese estado clinico: enfermo, internado, adopcion"); 
+		while(isNaN(estadoClinico)==true || estadoClinico!="enfermo" || estadoClinico!="internado" || estadoClinico!="adopcion")
+		{
+			estadoClinico = prompt("Error, ingrese estado clinico: enfermo, internado, adopcion"); 
+		}
+		tipoDePelo = prompt("Ingrese tipo de pelo: corto, largo, sin pelo"); 
+		while(isNaN(tipoDePelo)==true || tipoDePelo!="corto" || tipoDePelo!="largo" || tipoDePelo!="sin pelo")
+		{
+			tipoDePelo = prompt("Error, ingrese tipo de pelo: corto, largo, sin pelo"); 
+		}
+        temperaturaCorporal = prompt("Ingrese temperatura corporal");
+		temperaturaCorporal = parseInt(temperaturaCorporal); 
+		while(isNaN(temperaturaCorporal)==true || temperaturaCorporal<25 || temperaturaCorporal>42)
+		{
+			temperaturaCorporal = prompt("Error, ingrese temperatura corporal"); 
+			temperaturaCorporal = parseInt(temperaturaCorporal); 
+		}
+		
+		switch(animalIngresado)
+		{
+			case"perro": 
+				contadorPerro = contadorPerro + 1; 
+				acumuladorTemperaturaPerro = acumuladorTemperaturaPerro + temperaturaCorporal; 
+				if(contadorPerro==1)
+				{
+					pesoPerroMasPesado = pesoIngresado; 
+					nombrePerroMasPesado = nombreIngresado; 
+				}
+				else
+				{
+                    if(pesoPerroMasPesado<pesoIngresado)
+					{
+						PesoPerroMasPesado = pesoIngresado; 
+						nombrePerroMasPesado = nombreIngresado; 	
+					}
+				}
+				break; 
+			case"gato": 
+				contadorGato = contadorGato + 1; 
+				acumuladorTemperaturaGato = acumuladorTemperaturaGato + temperaturaCorporal; 
+				if(tipoDePelo=="sin pelo" && contadorGato==1)
+				{
+					pesoGatoSinPeloMasLiviano = pesoIngresado; 
+					nombreGatoSinPelosMasLiviano = nombreIngresado; 
+					razaGatoSinPelosMasLiviano = razaIngresada; 
+				}
+				else
+				{
+					if(tipoDePelo=="sin pelo" && pesoGatoSinPeloMasLiviano>pesoIngresado)
+					{
+						pesoGatoSinPeloMasLiviano = pesoIngresado; 
+						nombreGatoSinPelosMasLiviano = nombreIngresado; 
+						razaGatoSinPelosMasLiviano = razaIngresada; 
+					}
+				}
+				break; 	
+			case"otra cosa": 
+				contadorOtraCosa = contadorOtraCosa + 1; 
+				acumuladorTemperaturaOtraCosa = acumuladorTemperaturaOtraCosa + temperaturaCorporal; 
+			if(contadorOtraCosa>0)
+			{
+				nombreUltimaMascotaOtraCosa = nombreIngresado; 
+			}
+			break; 
+		}
+		switch(estadoClinico)
+		{
+			case"enfermo": 
+				contadorAnimalesEnfermos = contadorAnimalesEnfermos + 1; 
+				break; 
+			case"internados": 
+				contadorAnimalesInternados = contadorAnimalesInternados + 1; 
+				break; 
+			case"adopcion": 
+				contadorAnimalesAdopcion = contadorAnimalesAdopcion + 1; 
+				break; 
+		}
+		switch(tipoDePelo)
+		{
+			case"corto": 
+				break; 
+			case"largo":
+				break; 
+			case"sin pelo": 
+				contadorSinPelo = contadorSinPelo + 1 
+				if(contadorSinPelo==1)
+				{
+					temperaraturaAnimalSinPeloConMenorTemperatura = temperaturaCorporal; 
+					tipoDeAnimalSinPeloConMenorTemperatura = animalIngresado; 
+					nombreDeAnimalSinPeloConMenorTemperatura = nombreIngresado; 
+				}
+				else 
+				{
+					if(temperaturaAnimalSinPeloConMenorTemperatura>temperaturaCorporal)
+						{
+							temperaraturaAnimalSinPeloConMenorTemperatura = temperaturaCorporal; 
+							tipoDeAnimalSinPeloConMenorTemperatura = animalIngresado; 
+							nombreDeAnimalSinPeloConMenorTemperatura = nombreIngresado
+						}
+				}
+				break; 
+		}
+		
+		console.log("Su mascota se llama "+ nombreIngresado);
+		console.log("Su mascota es "+ animalIngresado); 
+		console.log("Su mascota tiene "+edadIngresada + " años"); 
+		console.log("Su mascota pesa "+ pesoIngresado + " kilos"); 
+		console.log("Su mascota tiene "+temperaturaCorporal+" grados de temperatura"); 
+
+        contadorAnimales = contadorAnimales+1; 
+		acumuladorPesoMascotas = acumuladorPesoMascotas + pesoIngresado; 
+		respuesta = prompt("quiere ingresar una nueva persona?"); 
+
+	}//fin de while
+
+	
+	promedioTemperaturaGato = acumuladorTemperaturaGato/contadorGato; 
+	promedioTemperaturaPerro = acumuladorTemperaturaPerro/contadorPerro; 
+	promedioTemperaturaOtraCosa = acumuladorTemperaturaOtraCosa/contadorOtraCosa; 
+	promedioPesoMascotas = acumuladorPesoMascotas/contadorAnimales; 
+
+    if(contadorPerro>0 || contadorGato>0)
+	{
+		porcentajePerroMasGato = contadorAnimales/(contadorPerro+contadorGato)*100; 
+	}
+	else
+	{
+		porcentajePerroMasGato = "cero"; 
+	}
+	if(promedioTemperaturaGato>promedioTemperaturaPerro)
+	{
+		tipoDeAnimalConMayorPromedioDeTemperaturaCorporal = "Gato"; 
+	}
+	else
+	{
+		if(promedioTemperaturaPerro>promedioTemperaturaOtraCosa)
+		{
+			tipoDeAnimalConMayorPromedioDeTemperaturaCorporal = "Perro"; 
+		}
+		else 
+		{
+			tipoDeAnimalConMayorPromedioDeTemperaturaCorporal = "Otra Cosa"; 
+		}
+	}
+    if(contadorAnimalesAdopcion<contadorAnimalesEnfermos)
+	{
+		estadoClinicoConMenosMascotas = "Adopcion"; 
+	}
+	else
+	{
+		if(contadorAnimalesEnfermos<contadorAnimalesInternados)
+		{
+			estadoClinicoConMenosMascotas = "Enfermos"; 
+		}
+		else
+		{
+			estadoClinicoConMenosMascotas = "Internados"; 
+		}
+	}
+    if(contadorPerro>0)
+	{
+		mensajePerroMasPesado = "El perro mas pesado es "+nombrePerroMasPesado+ " con "+pesoPerroMasPesado+" kilos"; 
+	}
+	else
+	{
+		mensajePerroMasPesado = "No hay perros"; 
+	}
+	if(contadorAnimalesEnfermos>0)
+	{
+		porcentajeAnimalesEnfermos = contadorAnimales/contadorAnimalesEnfermos*100; 
+	}
+	else
+	{
+		porcentajeAnimalesEnfermos = "cero"; 
+	}
+	if(contadorSinPelo>0)
+	{
+		mensajeSinPelo = "El tipo de animal sin pelo con menor temperatura corporal es "+tipoDeAnimalSinPeloConMenorTemperatura+ " y se llama "+nombreDeAnimalSinPeloConMenorTemperatura; 
+	}
+    else
+	{
+		mensajeSinPelo = "NO hay animales 'sin pelo' "
+	}
+	if(contadorGato>0 && tipoDePelo=="sin pelo")
+	{
+		mensajeGatoSinPelo = "El nombre de gato sin pelo mas liviano es "+nombreGatoSinPelosMasLiviano+ "y es de "+razaGatoSinPelosMasLiviano+" raza"; 
+	}
+	else
+	{
+		mensajeGatoSinPelo = "NO hay gatos 'sin pelo'"; 
+	}
+     
+    
+	  
+    console.log(mensajePerroMasPesado); 
+    console.log("El porcentaje de enfermos sobre el total de mascotas es "+porcentajeAnimalesEnfermos + "%")
+	console.log("El nombre de la ultima mascota de tipo 'otra cosa' es "+nombreUltimaMascotaOtraCosa); 
+	console.log(mensajeSinPelo);  
+	console.log("El tipo de mascota que tiene el mayor promedio de temperatura corporal es "+tipoDeAnimalConMayorPromedioDeTemperaturaCorporal); 
+	console.log("La suma de gatos y perros corresponde a " + porcentajePerroMasGato + "%"); 
+	console.log("El estado clinico tiene la menor cantidad de mascotas es " + estadoClinicoConMenosMascotas) ;       
+	console.log("El promedio de kilos de peso de tomando todas las mascotas es "+promedioPesoMascotas); 
+	console.log(mensajeGatoSinPelo); 
+
+
+}//fin funcion
 
 
