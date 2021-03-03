@@ -45,7 +45,7 @@ function mostrar()
 	{
         
 		productoIngresado = prompt("Ingrese producto"); 
-		while(isNaN(productoIngresado)==true && productoIngresado!="alcohol" && productoIngresado!="jabon" && productoIngresado!="barbijo")
+		while(isNaN(productoIngresado)==false || productoIngresado!="alcohol" && productoIngresado!="jabon" && productoIngresado!="barbijo")
 		{
 			productoIngresado = prompt("Error, ingrese producto: barbijo, alcohol, jabon"); 
 		}
