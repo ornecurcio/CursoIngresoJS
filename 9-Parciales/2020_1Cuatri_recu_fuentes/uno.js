@@ -137,6 +137,7 @@ c) Cuántas unidades de Barbijos se compraron en total
 
 }/* //fin de funcion 
 /*
+Ornela Curcio 
 Realizar el algoritmo que permita ingresar 5 paises:
 el continente (validar entre america , asia , europa ,africa y oceania) 
 el nombre del país, 
