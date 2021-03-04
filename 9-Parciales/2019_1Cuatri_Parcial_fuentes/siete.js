@@ -1,20 +1,21 @@
-/*Enunciado:1
+/*Ornela Curcio 
+Enunciado:1
 
 Debemos realizar la carga de una compra de 5(cinco) productos de desinfección
 de cada una debo obtener los siguientes datos:
 el nombre del producto el tipo de producto (validar "ALCOHOL", "IAC" o "QUAT"),
 el precio (validar entre 100 y 300),
 la cantidad de unidades (no puede ser 0 o negativo y no debe superar las 1000 unidades),
-el tipo de inflamable("ignífugo", "combustible", "explosivo" ) y la Marca.
+Categoria ("desinfectante", "bactericida", "detergente" ) y el fabricante.
 Se debe Informar al usuario lo siguiente:
 a) El promedio de cantidad por tipo de producto
-b) El tipo de inflamable con más cantidad de unidades en total de la compra
-c) Cuántas unidades de IAC con precios menos a 200 (inclusive) se compraron en total
-d) la marca y tipo del más caro de los productos*/
+b) La categoria con mas cantidad de unidades en total de la compra
+c) Cuántas unidades de detergente con precios menos a 200 (inclusive) se compraron en total
+d) el fabricante y Categoria del más caro de los productos*/
 
 function mostrar()
 {
-let tipoInflamaleDeProducto; 
+let tipoCategoriaIngresada; 
 let precioIngresado; 
 let cantidadIngresada; 
 let tipoDeproductoIngresado;
@@ -26,32 +27,32 @@ let contadorQuat;
 let acumulardorAlcohol; 
 let acumuladorIac; 
 let acumuladorQuat; 
-let tipoInflamableConMasCantidad; 
-let acumuladorIgnifugo; 
-let acumuladorCombustible; 
-let acumuladorExplosivo; 
-let acumuladorIacMenosDosCientos; 
+let tipoCategoriaMasUnidades; 
+let acumuladorDesinfectante; 
+let acumuladorDetergente; 
+let acumuladorBactericida; 
+let acumuladorDetergenteMenosDosCientos; 
 let precioProductoMasCaro; 
 let marcaProductoMasCaro; 
 let tipoProductoMasCaro; 
 let promedioAlcohol; 
 let promedioIac; 
 let promedioQuat; 
-let mensajeIacMenorDosCientos; 
+let mensajeMenosDosCientos; 
 
 
 contadorProducto=0; 
 contadorAlcohol=0; 
 contadorIac=0; 
 contadorQuat=0; 
-acumuladorCombustible=0; 
-acumuladorExplosivo=0; 
-acumuladorExplosivo=0; 
-acumuladorIgnifugo=0; 
+acumuladorDetergente=0; 
+acumuladorBactericida=0; 
+acumuladorBactericida=0; 
+acumuladorDesinfectante=0; 
 acumuladorQuat=0; 
 acumuladorIac=0; 
 acumulardorAlcohol=0; 
-acumuladorIacMenosDosCientos=0; 
+acumuladorDetergenteMenosDosCientos=0; 
 
 while(contadorProducto<5)
 {
@@ -76,10 +77,10 @@ while(contadorProducto<5)
 			cantidadIngresada = prompt("Error, ingrese cantidad entre 1 y 1000"); 
 			cantidadIngresada = parseInt(cantidadIngresada);
 		}
-    tipoInflamaleDeProducto = prompt("Ingrese tipo inflamable de  producto: ignifugo, combustible, explosivo"); 
-		while(isNaN(tipoInflamaleDeProducto)==false || tipoInflamaleDeProducto!="ignifugo" && tipoInflamaleDeProducto!="combustible" && tipoInflamaleDeProducto!="explosivo")
+    tipoCategoriaIngresada = prompt("Ingrese tipo inflamable de  producto: desinfectante, bactericida, detergente"); 
+		while(isNaN(tipoCategoriaIngresada)==false || tipoCategoriaIngresada!="desinfectante" && tipoCategoriaIngresada!="bactericida" && tipoCategoriaIngresada!="detergente")
 		{
-			tipoInflamaleDeProducto = prompt("Error, ingrese tipo inflamable de  producto: ignifugo, combustible, explosivo"); 
+			tipoCategoriaIngresada = prompt("Error, ingrese tipo inflamable de  producto: ignifugo, combustible, explosivo"); 
 		}
 
     marcaIngresada = prompt("Ingrese marca"); 
@@ -97,30 +98,27 @@ while(contadorProducto<5)
         case "IAC": 
         contadorIac=contadorIac+1; 
         acumuladorIac=acumuladorIac+cantidadIngresada; 
-        if(precioIngresado<201)
-        {
-            acumuladorIacMenosDosCientos=acumuladorIacMenosDosCientos+cantidadIngresada; 
-        }
-        break; 
-        case"QUAT": 
+               case"QUAT": 
         contadorQuat=contadorQuat+1; 
         acumuladorQuat=acumuladorQuat+cantidadIngresada; 
         break; 
     }
 
-    switch(tipoInflamaleDeProducto)
+    switch(tipoCategoriaIngresada)
     {
-        case"combustible": 
-        acumuladorCombustible = acumuladorCombustible+cantidadIngresada;
-        acumuladorCombustible = parseInt(acumuladorCombustible);  
+        case"detergente": 
+        acumuladorDetergente = acumuladorDetergente+cantidadIngresada;
+        acumuladorDetergente = parseInt(acumuladorDetergente);  
+        if(precioIngresado<201)
+        acumuladorDetergenteMenosDosCientos=acumuladorDetergenteMenosDosCientos+cantidadIngresada; 
         break; 
-        case"explosivo":
-        acumuladorExplosivo=acumuladorExplosivo+cantidadIngresada; 
-        acumuladorExplosivo=parseInt(acumuladorExplosivo); 
+        case"bactericida":
+        acumuladorBactericida=acumuladorBactericida+cantidadIngresada; 
+        acumuladorBactericida=parseInt(acumuladorBactericida); 
         break; 
-        case"ignifugo": 
-        acumuladorIgnifugo=acumuladorIgnifugo+cantidadIngresada;
-        acumuladorIgnifugo=parseInt(acumuladorIgnifugo);  
+        case"desinfectante": 
+        acumuladorDesinfectante=acumuladorDesinfectante+cantidadIngresada;
+        acumuladorDesinfectante=parseInt(acumuladorDesinfectante);  
         break; 
     }
     if(contadorProducto==1)
@@ -140,19 +138,19 @@ while(contadorProducto<5)
     }
 }//finwhile
 
-if(acumuladorCombustible>acumuladorExplosivo)
+if(acumuladorDetergente>acumuladorBactericida)
 {
-    tipoInflamableConMasCantidad = "El tipo inflamable con mas cantidad es Combustible. "; 
+    tipoCategoriaMasUnidades = "El tipo inflamable con mas cantidad es Detergente. "; 
 }
 else
 {
-    if(acumuladorExplosivo>acumuladorIgnifugo)
+    if(acumuladorBactericida>acumuladorDesinfectante)
     {
-        tipoInflamableConMasCantidad = "El tipo inflamable con mas cantidad es Explosivo. "; 
+        tipoCategoriaMasUnidades = "El tipo inflamable con mas cantidad es Bactericida. "; 
     }
     else
     {
-        tipoInflamableConMasCantidad = "El tipo inflamable con mas cantidad es Ignifugo. "; 
+        tipoCategoriaMasUnidades = "El tipo inflamable con mas cantidad es Desinfectante. "; 
     }
 }
 
@@ -180,23 +178,18 @@ else
 {
     promedioQuat = "No se registro Quat. "; 
 }
-if(acumuladorIacMenosDosCientos>0)
+if(acumuladorDetergenteMenosDosCientos>0)
 {
-    mensajeIacMenorDosCientos = "Se compraron "+acumuladorIacMenosDosCientos+" unidades de Iac con precio menor a doscientos. "; 
+    mensajeMenosDosCientos = "Se compraron "+acumuladorDetergenteMenosDosCientos+" unidades de detergente con precio menor a doscientos. "; 
 }
 else
 {
-    mensajeIacMenorDosCientos = "No se compraron unidades de IAC con precio menor a 200. "; 
+    mensajeMenosDosCientos = "No se compraron unidades de detergente con precio menor a 200. "; 
 }
 console.log(promedioAlcohol+promedioIac+promedioQuat); 
-console.log(tipoInflamableConMasCantidad); 
-console.log(mensajeIacMenorDosCientos); 
+console.log(tipoCategoriaMasUnidades); 
+console.log(mensajeMenosDosCientos); 
 console.log("La marca del producto mas caro es "+marcaProductoMasCaro+" de tipo "+tipoProductoMasCaro+" con "+precioProductoMasCaro+" de precio. "); 
-
-
-
-
-
 
 
 }//fin de funcion; 
