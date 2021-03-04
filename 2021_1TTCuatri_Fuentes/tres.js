@@ -31,6 +31,9 @@ function mostrar()
 	let precio; 
 	let precioTotal; 
 	let descuento; 
+	let mensajeOsdeSesenta;
+	let mensajePamiJoven; 
+	let mensajeDescuento; 
 
 	respuesta="si"; 
 	contadorOsde=0; 
@@ -74,13 +77,11 @@ function mostrar()
 			temperaturaCorporalIngresada = prompt("Error, ingrese temperatura entre 28 y 42"); 
 		}
 
-		respuesta=prompt("desea ingresar otro alumno?")
-
 		switch(obraSocialIngresada)
 		{
 			case"OSDE":
 			contadorOsde=contadorOsde+1; 
-			if(edad>60)
+			if(edadIngresada>60)
 			{
 				contadorOsdeSesenta = contadorOsdeSesenta+1; 
 			}
@@ -111,16 +112,41 @@ function mostrar()
 	}//fin while 
 	
 	precioTotal=precio*contadorPasajeros; 
+
 	if(contadorPasajeros/contadorPami>0.5)
 	{
 		descuento=25; 
 		precioTotal=precio*contadorPasajeros;
 		precioTotal= precioTotal - (precioTotal*descuento/100); 
+		mensajeDescuento="el viaje con el descuento aplicado sale "+ precioTotal; 
 	} 
 	else 
 	{   
 		descuento=0; 
 		precioTotal=precio*contadorPasajeros;
 		precioTotal= precioTotal - (precioTotal*descuento/100);
+		mensajeDescuento="No se aplico ningun descuento sobre el viaje: "+precioTotal; 
 	}
+
+	if(contadorOsdeSesenta>0)
+	{
+		mensajeOsdeSesenta= "La cantidad de mayores de 60 con Osde es "+contadorOsdeSesenta; 
+	}
+	else
+	{
+		mensajeOsdeSesenta = "No hay mayores de sesenta con Osde"; 
+	}
+    if(contadorPami>0)
+	{
+		mensajePamiJoven="El nombre de la persona mas joven de pami es "+nombreMujerJovenPami+" y tiene "+temperaturaMujerJovenPami+" grados de temperatura. "
+	}
+	else 
+	{
+		mensajePamiJoven="No hay personas de pami"; 
+	}
+	console.log(mensajeOsdeSesenta); 
+	console.log(mensajePamiJoven); 
+	console.log("el precio total del viaje sin descuentos es: "+precioTotal); 
+	console.log(mensajeDescuento); 
+
 }
